@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CubieBoard-固件烧写 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="固件烧写：先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持FEL键不松手，等PhoenixSuit上显示烧写固件对话框问你是否要格式化时，点击“是”，然后继续保持FEL键不松手，看串口的输出情况，如下，直到看得到一定数目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CubieBoard-固件烧写">
+<meta property="og:url" content="http://blog.lifejs.com/2013/08/18/cubieboard-firmware-programming/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="固件烧写：先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持FEL键不松手，等PhoenixSuit上显示烧写固件对话框问你是否要格式化时，点击“是”，然后继续保持FEL键不松手，看串口的输出情况，如下，直到看得到一定数目">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CubieBoard-固件烧写">
+<meta name="twitter:description" content="固件烧写：先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持FEL键不松手，等PhoenixSuit上显示烧写固件对话框问你是否要格式化时，点击“是”，然后继续保持FEL键不松手，看串口的输出情况，如下，直到看得到一定数目">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-cubieboard-firmware-programming" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/08/18/cubieboard-firmware-programming/" class="article-date">
+  	<time datetime="2013-08-18T15:06:00.000Z" itemprop="datePublished">Aug 18 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CubieBoard-固件烧写
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>固件烧写：</strong>先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持FEL键不松手，等PhoenixSuit上显示烧写固件对话框问你是否要格式化时，点击“是”，然后继续保持FEL键不松手，看串口的输出情况，如下，直到看得到一定数目的调试信息时松开按住FEL键的手，固件就开始刷了。（之前试了多次都刷不成功，后来把所有的USB外设全拔掉，偶然用小Y右方的USB线来烧写，原来接的是USB HUB，终于成功了，估计是USB外设太多的原因，因为后来用左方的USB口也成功了）。     </p>
+<blockquote>
+<p>要注意的一点是：关于PhoenixSuit的安装，有一个google的驱动在win8 x64上安装不了。要关掉win8的驱动签名才行，具体参考：<a href="http://bbs.teclast.com/forum.php?mod=viewthread&amp;tid=231817" target="_blank" rel="external">【分享】PhoenixSuit VPhoenixSuit V1.0.6 一键刷机工具 - 【台电平板电脑讨论区】 台电科技欢迎您！</a></p>
+<p>注意：在 Windows 8 64Bit 操作系统，adb 驱动来自于 Google ，取消强制数字签名认证才能安装。操作步骤如下：win+I，选择最下方的更改电脑设置，常规——高级启动下的立即重启——疑难解答——高级选项——windows 启动设置——重启。重启的时候跳出选择界面，如果没有选择界面，请在重启时按 F8 进入选择界面。按数字“7”选择强制禁用驱动签名，然后正常安装驱动就行了。</p>
+</blockquote>
+<p>烧写过程的串口信息：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"> <span class="constant">FES</span><span class="symbol">:</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:Fes</span> <span class="constant">Ver</span><span class="symbol">:</span> 098</div><div class="line"> <span class="constant">FES</span><span class="symbol">:================================================================================================</span>=</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                                                                               =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                         <span class="constant">EEMMMMMMLL</span>                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                     <span class="constant">::MMMHOLIGANEE</span>                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                   <span class="constant">::MM</span>.                                                       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                   <span class="constant">MMFF</span>                                                        =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                 <span class="constant">FFMM</span>                                                          =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                <span class="constant">MMMM</span>                                                           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                              ..<span class="constant">MMFF</span>                                                           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                              <span class="constant">EEMM</span>.                                           <span class="constant">FFMMMM</span>           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          . <span class="constant">MMMMMMMM</span>    <span class="constant">MMMMMMMMMMMMMMMMMM</span>      <span class="constant">FFMMMMMM::</span>      <span class="constant">::MMMM</span>      <span class="constant">BBMMMMFF</span>           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=        <span class="constant">::MM</span>  . <span class="constant">MMMM</span>          <span class="constant">MMMM</span>            <span class="constant">MM</span>.   <span class="constant">MMMMMM</span>    <span class="constant">EE</span>..<span class="constant">EEMM::</span>  <span class="constant">EE::</span>                 =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=        <span class="constant">MM</span>      <span class="constant">MMMM</span>        <span class="constant">::MMLL</span>          <span class="constant">EEMM</span>    <span class="constant">MMMMFF</span>  .       <span class="constant">MMMM::</span><span class="symbol">:</span><span class="symbol">:</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMM</span>    <span class="constant">FFMMI</span>         <span class="constant">BBMM</span>            <span class="constant">MMI</span>     <span class="constant">MMMM</span>            <span class="constant">MMMMEE</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMM</span>  . <span class="constant">MM::</span>          <span class="constant">MMMM</span>          <span class="constant">MMMM</span>    <span class="constant">BBMM</span>              <span class="constant">MMMM</span>                       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">BBMMFF::EE</span>              <span class="constant">MMMM</span>          <span class="constant">MMMM</span>  <span class="constant">MM::</span>                <span class="constant">BBMM</span>..                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMMEE</span>                <span class="constant">I</span> <span class="constant">MMI</span>         <span class="constant">I</span> <span class="constant">MMMM::</span>                  <span class="constant">::FFMMFF</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMM</span>          <span class="constant">LL</span>      <span class="constant">MMMM</span>          <span class="constant">EEMMMM</span>        <span class="constant">LL</span>          <span class="constant">BB</span>  <span class="constant">MMMM</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMM</span>      <span class="constant">I</span> <span class="constant">MM</span>        <span class="constant">MMMM</span>          <span class="constant">MMMMMM</span>      <span class="constant">MM::</span>        <span class="constant">MM</span>    <span class="constant">MMMM</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMMMMMMMMEE</span>          <span class="constant">MMMM</span>          .<span class="constant">GUANLI</span><span class="variable">@HUANG</span>.   <span class="constant">BB</span>    <span class="constant">BB</span>      <span class="constant">FFMM</span>.                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMMMM</span>..          <span class="constant">I</span> <span class="constant">MMI</span>             <span class="constant">MMMMMMEE</span>      <span class="constant">MMMMMM</span>          <span class="constant">MMEE</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MMMM</span>                                            <span class="constant">MMMM</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MMMM</span>                                            <span class="constant">::MM::</span>                 =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MM</span>                                                <span class="constant">BBMM</span>        <span class="constant">MM</span>       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                      <span class="constant">EEBB</span>                                                  <span class="constant">BBMM</span>..  <span class="constant">MMMM</span>       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                      <span class="constant">MM</span>                                                      ..<span class="constant">EEMMFF</span>         =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          <span class="constant">MMMMMMMMMMMM</span>                                                                         =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          <span class="constant">MMMMMMMMI</span>                                                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                                                                               =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:================================================================================================</span>=</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">1</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">2</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">3</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">5</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">6</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">7</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">8</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">9</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:CONFIG_USB_GADGET_DUALSPEED</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes</span> connect to host</div><div class="line"> <span class="constant">FES</span><span class="symbol">:USB_MOV_DATA_BY_DMA!</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">10</span>.......</div><div class="line"> <span class="constant">FES</span><span class="symbol">:jump</span> to fes_main</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span><span class="symbol">:</span> fes_protocol_process start</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>[info]<span class="symbol">:</span> set address <span class="number">5</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:write</span> special pipe</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span><span class="symbol">:</span> fed reg_addr = <span class="number">0x4011f714</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">0</span>] = <span class="number">0x40a00000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">1</span>] = <span class="number">0x40a01000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">2</span>] = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">3</span>] = <span class="number">0x00000000</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:</span>                <span class="constant">Hello</span>, <span class="constant">Nand</span> <span class="constant">Register</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:<span class="string">"private"</span></span> part <span class="constant">NOT</span> configured.</div><div class="line"> <span class="constant">NHW</span> <span class="symbol">:</span> start nand scan</div><div class="line"> [<span class="constant">NAND</span>] nand driver(b) <span class="symbol">version:</span> <span class="number">0x2</span>, <span class="number">0x12</span>, <span class="symbol">data:</span> <span class="number">20130325</span></div><div class="line"> <span class="constant">NFC</span> <span class="constant">Randomizer</span> start.</div><div class="line"> [<span class="constant">SCAN_DBG</span>] <span class="constant">Nand</span> flash chip id <span class="symbol">is:</span><span class="number">0xec</span> <span class="number">0xd7</span> <span class="number">0x94</span> <span class="number">0x7a</span> <span class="number">0x54</span> <span class="number">0x43</span></div><div class="line"></div><div class="line">[<span class="constant">SCAN_DBG</span>] ==============<span class="constant">Nand</span> <span class="constant">Architecture</span> <span class="constant">Parameter</span>==============</div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">ID</span><span class="symbol">:</span>         <span class="number">0x7a94d7ec</span> <span class="number">0xffffffff</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">Count</span><span class="symbol">:</span>      <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">Connect</span><span class="symbol">:</span>    <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Rb</span> <span class="constant">Connect</span> <span class="constant">Mode</span><span class="symbol">:</span>      <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Sector</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Page</span><span class="symbol">:</span> <span class="number">0x10</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Page</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Block</span><span class="symbol">:</span>  <span class="number">0x80</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Block</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Die</span><span class="symbol">:</span>   <span class="number">0x1000</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Plane</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Die</span><span class="symbol">:</span>   <span class="number">0x2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Die</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Chip</span><span class="symbol">:</span>    <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Bank</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Chip</span><span class="symbol">:</span>   <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Optional</span> <span class="constant">Operation</span><span class="symbol">:</span>   <span class="number">0x11088</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Access</span> <span class="constant">Frequence</span><span class="symbol">:</span>     <span class="number">0x1e</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">ECC</span> <span class="constant">Mode</span><span class="symbol">:</span>             <span class="number">0x3</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Read</span> <span class="constant">Retry</span> <span class="constant">Type</span><span class="symbol">:</span>      <span class="number">0x0</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">DDR</span> <span class="constant">Type</span><span class="symbol">:</span>             <span class="number">0x0</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>] =======================================================</div><div class="line"></div><div class="line">[<span class="constant">SCAN_DBG</span>] ==============<span class="constant">Optional</span> <span class="constant">Operaion</span> <span class="constant">Parameter</span>==============</div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneReadCmd</span><span class="symbol">:</span>      <span class="number">0x60</span>, <span class="number">0x60</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneWriteCmd</span><span class="symbol">:</span>     <span class="number">0x11</span>, <span class="number">0x81</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneCopyReadCmd</span><span class="symbol">:</span>  <span class="number">0x60</span>, <span class="number">0x60</span>, <span class="number">0x35</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneCopyWriteCmd</span><span class="symbol">:</span> <span class="number">0x85</span>, <span class="number">0x11</span>, <span class="number">0x81</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneStatusCmd</span><span class="symbol">:</span>    <span class="number">0x70</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">InterBnk0StatusCmd</span><span class="symbol">:</span>     <span class="number">0xf1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">InterBnk1StatusCmd</span><span class="symbol">:</span>     <span class="number">0xf2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">BadBlockFlagPosition</span><span class="symbol">:</span>   <span class="number">0x2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneBlockOffset</span><span class="symbol">:</span>  <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>] =======================================================</div><div class="line"> <span class="constant">NHW</span> <span class="symbol">:</span> nand hw scan ok</div><div class="line"> check nand version start.</div><div class="line"> <span class="constant">Current</span> nand driver version is <span class="number">0x000000ff</span> <span class="number">0x00000000</span> <span class="number">0x00000002</span> <span class="number">0x00000012</span></div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> <span class="constant">Media</span> version is valid <span class="keyword">in</span> block <span class="number">0</span>, version info is <span class="number">0x000000ff</span> <span class="number">0x00000000</span> <span class="number">0x00000002</span> <span class="number">0x00000012</span></div><div class="line"> nand driver version match ok <span class="keyword">in</span> block <span class="number">0</span>.</div><div class="line"> <span class="constant">VersionCheck</span> <span class="keyword">end</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:To</span> erase boot<span class="number">0</span> blocks.</div><div class="line"> <span class="constant">Ready</span> to erase boot blocks.</div><div class="line"> has cleared the boot blocks.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:L322</span>,<span class="constant">To</span> erase nand.</div><div class="line"> <span class="constant">Ready</span> to erase chip.</div><div class="line"> nfb phy init ok.</div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> page <span class="symbol">size:</span><span class="number">0x00002000</span>, <span class="symbol">oob_size:</span> <span class="number">0x00000020</span>, block <span class="symbol">size:</span> <span class="number">0x00000080</span>, bad block <span class="symbol">position:</span> <span class="number">0x00000002</span>.</div><div class="line"> chip_cnt = <span class="number">0x00000001</span>, chip_connect = <span class="number">0x00000001</span>, rb_cnt = <span class="number">0x00000001</span>,  rb_connect = <span class="number">0x00000001</span>,  good_block_ratio =<span class="number">0x000003b0</span></div><div class="line"> erase chip <span class="number">0</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">16</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">17</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">4094</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">4095</span></div><div class="line"> has cleared the chip.</div><div class="line"> the nand is <span class="constant">OK</span>.</div><div class="line"> <span class="constant">Ready</span> to scan bad blocks.</div><div class="line"> nfb phy init ok.</div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> scan <span class="constant">CE</span> <span class="number">0</span></div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">5</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">16</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">17</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4094</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4095</span>.</div><div class="line"> <span class="number">6</span> bad blocks <span class="keyword">in</span> <span class="constant">CE</span> <span class="number">0</span></div><div class="line"> cal bad block num is <span class="number">12</span></div><div class="line"> cal good block num is <span class="number">971</span></div><div class="line"> good block ratio is <span class="number">944</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:get</span> the good blk ratio after hwscan <span class="symbol">:</span> <span class="number">944</span></div><div class="line"> _RepairLogBlkTbl start</div><div class="line"> _RepairLogBlkTbl <span class="keyword">end</span></div><div class="line"> get mbr error</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:erase=</span><span class="number">1</span>, hasPrivatePart=<span class="number">0</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:nand</span> logic size [<span class="number">0x00000000</span>, <span class="number">0x00760000</span>]<span class="constant">Sec</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:</span>               <span class="constant">Byebye</span>, <span class="constant">Nand</span> <span class="constant">Register</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> run addr = <span class="number">0x00000000</span> , type = <span class="number">1437204482</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0x50753e48</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0xc51b63f7</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0xdab00f3b</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/08/26/cubieboard-automount-tf-and-disk/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          CubieBoard-自动挂载TF卡和移动硬盘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/08/16/thinking-in-software-design/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">软件设计的一些感想</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="cubieboard-firmware-programming" data-title="CubieBoard-固件烧写" data-url="http://blog.lifejs.com/2013/08/18/cubieboard-firmware-programming/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

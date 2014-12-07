@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>设计模式学习之Facade模式 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天讲外观模式，这个模式其实理解起来超级简单，为什么呢？这个模式其实我觉得可以用四个字来形容它：化繁为简。因为这个模式就是用来提供简化接口的。什么是简化接口？其实就是将很多复杂的接口组合起来成为一个新接口。你或许会问，把许多复杂的接口组合起来不是会更复杂吗，怎么会变得简单，这不是自相矛盾吗？哈哈，那你就错了，其实外观模式更像一个东西：宏。又拿宏说事儿了，不是上次命令模式里面提到过“命令宏”的吗，这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式学习之Facade模式">
+<meta property="og:url" content="http://blog.lifejs.com/2013/07/16/design-mode-facade/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="今天讲外观模式，这个模式其实理解起来超级简单，为什么呢？这个模式其实我觉得可以用四个字来形容它：化繁为简。因为这个模式就是用来提供简化接口的。什么是简化接口？其实就是将很多复杂的接口组合起来成为一个新接口。你或许会问，把许多复杂的接口组合起来不是会更复杂吗，怎么会变得简单，这不是自相矛盾吗？哈哈，那你就错了，其实外观模式更像一个东西：宏。又拿宏说事儿了，不是上次命令模式里面提到过“命令宏”的吗，这">
+<meta property="og:image" content="http://bcs.duapp.com/everdom-blog/blog/2013_09/facademode.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式学习之Facade模式">
+<meta name="twitter:description" content="今天讲外观模式，这个模式其实理解起来超级简单，为什么呢？这个模式其实我觉得可以用四个字来形容它：化繁为简。因为这个模式就是用来提供简化接口的。什么是简化接口？其实就是将很多复杂的接口组合起来成为一个新接口。你或许会问，把许多复杂的接口组合起来不是会更复杂吗，怎么会变得简单，这不是自相矛盾吗？哈哈，那你就错了，其实外观模式更像一个东西：宏。又拿宏说事儿了，不是上次命令模式里面提到过“命令宏”的吗，这">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-design-mode-facade" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/07/16/design-mode-facade/" class="article-date">
+  	<time datetime="2013-07-16T04:43:00.000Z" itemprop="datePublished">Jul 16 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式学习之Facade模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天讲外观模式，这个模式其实理解起来超级简单，为什么呢？这个模式其实我觉得可以用四个字来形容它：化繁为简。因为这个模式就是用来提供简化接口的。什么是简化接口？其实就是将很多复杂的接口组合起来成为一个新接口。你或许会问，把许多复杂的接口组合起来不是会更复杂吗，怎么会变得简单，这不是自相矛盾吗？哈哈，那你就错了，其实外观模式更像一个东西：宏。又拿宏说事儿了，不是上次命令模式里面提到过“命令宏”的吗，这个模式和宏有什么关系呢？嘿嘿，如果把上次“命令宏”称为“狭义的宏”的话，那么外观模式就是“广义的宏”（似乎越来越难理解了……）。</p>
+<p>别急，让我慢慢道来，先解决为什么叫“广义的宏”这个问题。首先，广义代表这个模式具有很高的通用性，也就是说，它不只是限于对单一类型的接口进行“捆绑销售”，它还能对不同类型的接口进行“集中甩卖”，哎，说的专业点，就是外观模式可以将不同子系统的接口组合成一个接口供用户使用，而这个接口因为组合了很多的功能，使得用户不用自己去定义n多的子系统，然后自己手动操作这些子系统的方法，而只需要调用这个合成的接口就能完成一大堆的功能，是不是简化了呢？</p>
+<p>再来详细讲一下吧，定义还是必须的：</p>
+<blockquote>
+<p><strong>外观模式：</strong><br>为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+<p><strong>适用性：</strong></p>
+<ol>
+<li>当你要为一个复杂子系统提供一个简单接口时。子系统往往因为不断演化而变得越来越复杂。大多数模式使用时都会产生更多更小的类。这使得子系统更具可重用性，也更容易对子系统进行定制，但这也给那些不需要定制子系统的用户带来一些使用上的困难。Facade 可以提供一个简单的缺省视图，这一视图对大多数用户来说已经足够，而那些需要更多的可定制性的用户可以越过facade层。</li>
+<li>客户程序与抽象类的实现部分之间存在着很大的依赖性。引入facade将这个子系统与客户以及其他的子系统分离，可以提高子系统的独立性和可移植性。</li>
+<li>当你需要构建一个层次结构的子系统时，使用facade模式定义子系统中每层的入口点。如果子系统之间是相互依赖的，你可以让它们仅通过facade进行通讯，从而简化了它们之间的依赖关系。</li>
+</ol>
+</blockquote>
+<p>再上类图：</p>
+<p><a href="http://bcs.duapp.com/everdom-blog/blog/2013_09/facademode.png" target="_blank" rel="external"><img src="http://bcs.duapp.com/everdom-blog/blog/2013_09/facademode.png" alt="facademode"></a></p>
+<p>对这类图是不是有点无语？是不是感觉摸不着头脑？呵呵，别被它的外表所吓倒，其实你只需要关心最上面的那个接口就行了，对于subsystem也就是子系统可以完全不需要仔细的考虑，而只需要知道如何调用子系统提供的接口就行了，我们还是用个例子来说吧：</p>
+<p>就拿开车来说，开车是需要很多的操作的，很多小细节啊（这可是学驾照时的亲身体会啊），我们简单说一下：开车门-&gt;插钥匙-&gt;启动发动机-&gt;踩离合器-&gt;进档-&gt;松离合器-&gt;松手刹-&gt;加油门-&gt;转动方向盘…（车跑起来了，哈哈，不过后序步骤就要靠你自己了;)）。但随着科技的发展，现在果断出现了全自动的汽车（科技真给力），对于这种全自动的汽车来说，显然没有了人，这些操作就只能又计算机控制了，如果现在要你写一个这样的全自动驾车的程序，使得用户只需要插入钥匙，点击开车按钮就能自动开车了（这就方便了，每个人都会），那该怎么写呢？</p>
+<p>是不是觉得很复杂？没关系，让复杂的问题交给科学家吧，咱们要懂得利用他们的成果，嘻嘻，假设科学家们已经将复杂的控制功能封装好了，成为了一个个子系统，比如车门，档位，发动机，离合器，手刹，油门都有了各自的控制方法，那我们现在就只需要写汽车的接口，就三个：权限认证（插钥匙，当然现在科技这么发达，也有可能出现别的验证方式呢），还有开车，停车，怎么做呢：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//汽车的接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ICar</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> bool <span class="title">auth</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>();</div><div class="line">}</div><div class="line"></div><div class="line">如前所述，现在科学家提供了很多的控制类接口：</div><div class="line"><span class="comment">//车门接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ICarDoor</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span>();</div><div class="line">}</div><div class="line"><span class="comment">//档位接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IGears</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLevel</span>(<span class="keyword">int</span> level);</div><div class="line">}</div><div class="line"><span class="comment">//转向灯接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ITurnLight</span></span></div><div class="line">{</div><div class="line">    <span class="comment">//0为左，1为右</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLight</span>(<span class="keyword">int</span> direction);</div><div class="line">}</div><div class="line"><span class="comment">//喇叭接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ISpeaker</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beep</span>();</div><div class="line">}</div><div class="line"><span class="comment">//引擎接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IEngine</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">refuel</span>();</div><div class="line">}</div><div class="line"><span class="comment">//离合器接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IClutch</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">press</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loose</span>();</div><div class="line">}</div><div class="line"><span class="comment">//手刹接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IHandBrake</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pull</span>();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loose</span>();</div><div class="line">}</div><div class="line"><span class="comment">//油门接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IAccelerator</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span>(<span class="keyword">int</span> level);</div><div class="line">}</div><div class="line"><span class="comment">//方向盘</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IWheel</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toLeft</span>(<span class="keyword">int</span> degree);</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toRight</span>(<span class="keyword">int</span> degree);</div><div class="line">}</div><div class="line"><span class="comment">//权限认证（插钥匙，当然现在科技这么发达，也有可能出现别的验证方式呢），</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IAuthSystem</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> bool <span class="title">auth</span>();</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>既然已经有了这么多接口，那么我们的自动系统就只需要根据这些接口进行顺序的调用就可以了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoCar</span> <span class="keyword">implements</span> <span class="title">ICar</span></span></div><div class="line">{</div><div class="line">    ICarDoor carDoor;</div><div class="line">    IGears gears;</div><div class="line">    ITurnLight turnLight;</div><div class="line">    ISpeaker speaker;</div><div class="line">    IEngine engine;</div><div class="line">    IClutch clutch;</div><div class="line">    IHandBrake handBrake;</div><div class="line">    IAccelerator accelerator;</div><div class="line">    IWheel wheel;</div><div class="line">    <span class="keyword">public</span> <span class="title">AutoCar</span>(ICarDoor carDoor, IGears gears,  ITurnLight turnLight, ISpeaker speaker, IEngine engine,</div><div class="line">    IClutch clutch, IHandBrake handBrake, IAccelerator accelerator, IWheel wheel, IAuthSystem authSystem)</div><div class="line">    {</div><div class="line">        <span class="keyword">this</span>.carDoor=carDoor;</div><div class="line">        <span class="keyword">this</span>.gears=gears;</div><div class="line">        <span class="keyword">this</span>.turnLight=turnLight;</div><div class="line">        <span class="keyword">this</span>.speaker=speaker;</div><div class="line">        <span class="keyword">this</span>.engine=engine;</div><div class="line">        <span class="keyword">this</span>.clutch=clutch;</div><div class="line">        <span class="keyword">this</span>.handBrake=handBrake;</div><div class="line">        <span class="keyword">this</span>.accelerator=accelerator;</div><div class="line">        <span class="keyword">this</span>.wheel=wheel;</div><div class="line">        <span class="keyword">this</span>.authSystem=authSystem;</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span>()</div><div class="line">    {</div><div class="line">        carDoor.close();<span class="comment">//关门都由系统来做，人真懒啊，:)</span></div><div class="line">        <span class="keyword">if</span>(authSystem.auth())<span class="comment">//验证权限</span></div><div class="line">        {</div><div class="line">            engine.open();<span class="comment">//打开发动机</span></div><div class="line">            clutch.press();<span class="comment">//踩死离合器</span></div><div class="line">            gears.setLevel(<span class="number">1</span>);<span class="comment">//进1档</span></div><div class="line">            turnLight.setLight(<span class="number">0</span>);<span class="comment">//开左转向灯</span></div><div class="line">            speaker.beep();<span class="comment">//鸣笛</span></div><div class="line">            clutch.loose();<span class="comment">//松开离合器</span></div><div class="line">            handBrake.loose();<span class="comment">//松手刹</span></div><div class="line">            accelerator.accelerate(<span class="number">1</span>);<span class="comment">//加一点就行了，别过猛了，不然会很暴力的，:)</span></div><div class="line">            <span class="comment">//后面的事交给科学家吧，:)</span></div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>();</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>这样一来，用户只需要关心ICar接口就行了，想想当你想出门的时候，只需要打开车门，插入钥匙，然后按“开车”按钮，然后什么都不用管，那将是多么的惬意啊，其实，这一切都得感谢外观模式啊，外观模式就是提供一个非常友好的外观给用户（长得漂亮谁不喜欢啊:)），使得用户不需要关心它内部的实现细节，使用户从繁重的工作中解脱出来。</p>
+<p>唉，这上面就是外观模式？不就是把一堆类集合在一起，然后把需要的不同类的方法集中到一个方法里面实现吗，这么简单？是啊，就这么简单！多简单啊！我想现在你应该搞清楚为什么我把外观模式叫做广义的宏了吧，不信你再看看上面的代码，Car类中的drive()方法不就是个典型的宏吗，如果你还不清楚，请深入的学一下office word，:)</p>
+<p>好了，这个模式就讲到这里，但顺便提一下另外几个模式：装饰者模式和适配器模式，难道这三个模式有什么共同点吗？是的，它们的共同点就是：对接口进行再次封装。装饰者模式是将被装饰者的接口动态的加上新的职责，适配器模式是将被适配者的接口转换成新的接口，而外观模式则是组合多个系统的接口创造新的接口。各种模式都有各自独特的作用，要看你怎么用了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/07/29/multiple-os-installation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          多系统安装实录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/07/10/design-mode-adapter/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式学习之Adapter模式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="design-mode-facade" data-title="设计模式学习之Facade模式" data-url="http://blog.lifejs.com/2013/07/16/design-mode-facade/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

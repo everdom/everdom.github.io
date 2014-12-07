@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>软件设计的一些感想 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一些洞见。事后用的时候倒觉得理所当然了。其实这是要不得的，学习的过程我认为不应该是纯粹的吸收，而是要有选择的过滤，留其精华，去其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件设计的一些感想">
+<meta property="og:url" content="http://blog.lifejs.com/2013/08/16/thinking-in-software-design/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一些洞见。事后用的时候倒觉得理所当然了。其实这是要不得的，学习的过程我认为不应该是纯粹的吸收，而是要有选择的过滤，留其精华，去其">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件设计的一些感想">
+<meta name="twitter:description" content="已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一些洞见。事后用的时候倒觉得理所当然了。其实这是要不得的，学习的过程我认为不应该是纯粹的吸收，而是要有选择的过滤，留其精华，去其">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-thinking-in-software-design" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/08/16/thinking-in-software-design/" class="article-date">
+  	<time datetime="2013-08-16T04:46:00.000Z" itemprop="datePublished">Aug 16 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a><a class="article-category-link" href="/categories/学习笔记/探索与发现/">探索与发现</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件设计/">软件设计</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      软件设计的一些感想
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一些洞见。事后用的时候倒觉得理所当然了。其实这是要不得的，学习的过程我认为<strong>不应该是纯粹的吸收，而是要有选择的过滤，留其精华，去其糟粕</strong>，如果能加入自己的总结就更好了，只可惜我在很多时候忘记了这事儿，或者在很多时候没有空下来专门做一次如此认真的总结。但在技术的层面上，一般的说法是，任何一种技术都是基于某种设计思想，而至于用什么来具体实现并不是最重要的。其实思想和设计不能用简单的一对一和一对多关系来说明。经常会有人说一种思想可以衍生多种技术，其实他只说对了一半，因为一种技术并不只是一种思想的实现，而是多种思想的交融。</p>
+<p>拿软件设计来说，对于基于窗口的程序设计，我们有多种技术方案可以选择，在windows下有mfc，.net, wpf，在linux下有gtk, qt, wxWidgets，在mac下有cocoa, 但核心思想差不多，大多用到了mvc思想，但mvc思想本身也是一个组合思想，它组合了策略模式，观察者模式等。对于这样的一个设计思想来说，它其实是一个对设计的高度抽象。我甚至可以做这样一个奇怪的思考：如果将mvc模式套用到人身上，那么人所看到的就是view，人所想到的就是controller，人所使用的便是model了，那么针对一个人来说，他的基本动作可能如下：看到东西-&gt;产生需求-&gt;寻找工具来实现自己的需求。所以我感觉，软件设计有时更像对人的行为模拟，软件系统更像是一个虚拟的人（这个人的智商要看你给他多少知识和能力），或者说，软件设计归根到底是以人的认知来实现的，所以我们要划分模块，要理清各个模块之间的关系，要考虑它们之间的相互影响，还要考虑他们之间的交互。如果各个模块之间关系混乱不清，那么你将会的到一个很烂的系统，置于会出现什么结果，那就不得而知了。举个简单的例子：试想一下如果你吃饭咬到舌头了，却发现屁股痛，这是一件多么尴尬的事情。</p>
+<p>所以，软件的设计实际上是一个很复杂的事情，一个高超的软件更为复杂，因为你要考虑太多的情况，一个人是极其复杂的。但正如所有的物质都是由简单的原子组成的，所有的复杂性都能划分成最简单最基本的东西。就好比操作系统这样一个常人很难企及的东西，其实最底层也就六个操作，引用linux创始人linus的话来说就是：“你在UNIX上完成的大部分任务都是通过六个基本操作完成的，它们被称作”系统呼叫”（system call）。第一个基本操作是”创建子进程”（fork），一个程序把自身完全复制出来，这样你就有了两个相同的拷贝。第二个基本操作是复制出来的程序，再用一个新项目替换自己。其他四个基本系统呼叫—打开、关闭、读和写—都是为了访问文件的。这六个系统呼叫便组成了UNIX的简单操作。然后，你只需在程序之间创造出交流渠道（pipes），就能解决复杂的问题。”，那么归结到人身上，也就是那么几种：活动（身体活动和思维活动），新陈代谢，睡觉（纯属个人想法勿喷）。</p>
+<p>记得以前看bbc的纪录片《混沌理论》中讲到图灵的一段，图灵曾经提出一个伟大的构想：自然界由一个最简单的数学公式组成。这个理论促进了后来的“混沌理论”和“分形学”的研究和发展，包括著名的“蝴蝶效应”，也和“混沌理论”有关。我们都知道，图灵被称为“计算机之父”，而现代的软件设计方法和这种构想肯定存在千丝万缕的联系。所以，我认为，软件设计如果是一种把问题搞复杂的设计，那将是一个失败的设计。软件设计应该是将一个复杂的系统一步一步划分成“原子”的过程，而<strong>软件架构的目标应该是使每一个分块都容易理解而且容易改变</strong>（所谓的可维护性和可扩展性）。</p>
+<p>而对于人来说，人生活在一个“实体”的世界里，如果把人类的历史看作一天，那么人拥有真正的思想是在一分钟以前，所以上帝无法阻止人类用“面向对象”的方式来进行软件设计，也无法阻止程序员用mvc的思想来实现一个软件系统，因为这一切看起来理所当然。所以，无论你的技术多么高超，我都可以想象你在面对一堆复杂的算法和一堆鲜活的对象的时候的不同感受，因为我也可以感同身受:)。所有的人都喜欢用简单的方式解决问题（如果你不是，那你也许是公务员，:)），更喜欢用简单的方式解决复杂的问题，那样会有成就感，程序员是最佳案例。为什么说一个会偷懒的程序员是一个好的程序员？那是因为程序员的偷懒是对问题的抽象和扩展，对之前冗长而繁琐的解决问题的方式建立一个更为宽泛的适用模型，从而应对类似重复的问题。而所谓的抽象，便是思维的结晶。其实，抽象在各行各业都有应用，只不过在软件开发领域，这个词被提及的非常之广范非常之响亮，以至于成了某些编程语言的关键字。其实抽象是一个很宽泛的概念，<strong>它是一种对事物本质的提取过程</strong>（《数据结构》中有这样的定义），所以我觉得在软件设计中的抽象，可以运用到其他领域，在其他领域中的抽象，也能应用到软件设计中来。所以，没必要惊讶图灵是个数学家，或者唐纳德也是数学家…，因为从本质上来说，数学这门科学就是一种抽象科学，把自然界抽象成数学模型，而计算机就是对数学抽象模型的模拟器。</p>
+<p>胡说了一大堆，也不知从哪儿来的灵感，但作为一个软件工程师，我觉得这些东西是应该而且值得去思考的。上次看到一则博文讲到，这个世界由三种人推动：科学家，艺术家，工程师。也许这种说法并不一定正确，但至少说明了一个观点：工程师想要实现优秀的产品，必须懂得科学家和艺术家的抽象，因为那是他们的思维结晶。而<strong>一个好的工程师，从某种程度来说，也是一个科学家或者一个艺术家</strong>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/08/18/cubieboard-firmware-programming/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          CubieBoard-固件烧写
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/07/29/multiple-os-installation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多系统安装实录</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="thinking-in-software-design" data-title="软件设计的一些感想" data-url="http://blog.lifejs.com/2013/08/16/thinking-in-software-design/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

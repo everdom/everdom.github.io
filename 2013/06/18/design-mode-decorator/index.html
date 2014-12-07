@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>设计模式学习之Decorator模式 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="继续学习设计模式，今天是装饰者模式，它属于结构型模式，首先还是它的基本概念：
+
+装饰者模式：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。
+适用性：
+
+在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。
+处理那些可以撤消的职责。
+当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式学习之Decorator模式">
+<meta property="og:url" content="http://blog.lifejs.com/2013/06/18/design-mode-decorator/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="继续学习设计模式，今天是装饰者模式，它属于结构型模式，首先还是它的基本概念：
+
+装饰者模式：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。
+适用性：
+
+在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。
+处理那些可以撤消的职责。
+当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式学习之Decorator模式">
+<meta name="twitter:description" content="继续学习设计模式，今天是装饰者模式，它属于结构型模式，首先还是它的基本概念：
+
+装饰者模式：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。
+适用性：
+
+在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。
+处理那些可以撤消的职责。
+当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-design-mode-decorator" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/06/18/design-mode-decorator/" class="article-date">
+  	<time datetime="2013-06-18T04:28:00.000Z" itemprop="datePublished">Jun 18 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式学习之Decorator模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>继续学习设计模式，今天是装饰者模式，它属于结构型模式，首先还是它的基本概念：</p>
+<blockquote>
+<p><strong>装饰者模式：</strong><br>动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。</p>
+<p><strong>适用性：</strong></p>
+<ol>
+<li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。</li>
+<li>处理那些可以撤消的职责。</li>
+<li>当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。</li>
+</ol>
+</blockquote>
+<p><strong>我的理解是：</strong><br>装饰者模式就好比一个个wrapper（包装器），将一个对象一层层的包装，然后返回包装后的对象，就好比你在网上购买了一个电饭锅，那么这个电饭锅就是最原始的对象，而商家可能会在发货时进行一个初步包装，首先将电饭锅用一层泡沫包起来，然后装入一个纸箱，接着交给快递公司，然后快递公司收到这个物品后，还要进行二次包装，即使用快递公司专门的盒子装起来（或者用麻袋装好），然后贴上胶布开始运输，客户收到的这个箱子自后，一层层解开包装，最后拿出电饭锅。那么所有包装这个电饭锅的东西，像泡沫啊，纸箱啊，盒子啊，胶布啊，都可以算作装饰者，装饰者将原来的对象装饰完之后，会生成一个装饰后的对象，使源对象加上各种装饰品。所以，既然装饰者依赖于被装饰的对象，那么，装饰者在实现时就理所当然需要一个被装饰的对象的引用了，然后装饰完之后该引用就会指向装饰后的对象了。</p>
+<p><strong>所以，装饰者模式一定要搞明白装饰者的使用方式。</strong></p>
+<p>另外，因为装饰者能够替换源对象，所以在实际实现时需要将装饰者和源对象继承同一个父类（这个和实际有所不同，实际中，装饰者和源对象是不同的对象种类，但设计总归设计，不能总是和实际完美的相符，是需要一些灵活的处理的，而且这种设计的其本质是装饰者装饰之后的对象和源对象属于同一个父类，就好比电饭锅和装在盒子里的电饭锅都是电饭锅一样，但盒子并不是电饭锅）</p>
+<p>还有一点就是，实际实现的装饰者，是装饰源对象的某个方法，相当于将被装饰的对象的某个方法增添或替换成某种方法而不改变源对象的代码和结构，就相当于动态的改变某种功能。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//被装饰者接口</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IProduct</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transport</span>();</div><div class="line">}</div><div class="line"><span class="comment">//具体的被装饰者</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Product</span> <span class="keyword">implements</span> <span class="title">IProduct</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">protected</span> String name;</div><div class="line">  <span class="keyword">public</span> <span class="title">Product</span>(String name)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transport</span>()</div><div class="line">  {</div><div class="line">    System.out.println(<span class="string">"原始的产品："</span>+<span class="keyword">this</span>.name);</div><div class="line">    System.out.println(<span class="string">"运输..."</span>);</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//装饰者类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">IProduct</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">protected</span> IProduct product;</div><div class="line">  <span class="keyword">protected</span> String name;</div><div class="line">  <span class="keyword">public</span> <span class="title">Decorator</span>(IProduct product, String name)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.product=product;</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transport</span>()</div><div class="line">  {</div><div class="line">    System.out.println(<span class="string">"包装"</span>);</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.product != NULL)</div><div class="line">    {</div><div class="line">      <span class="keyword">this</span>.product.transport();</div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//具体的装饰者1</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator1</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Decorator1</span>(IProduct product)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.product=product;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"泡沫"</span>;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transport</span>()</div><div class="line">  {</div><div class="line">    System.out.println(<span class="string">"用"</span>+<span class="keyword">this</span>.name+<span class="string">"包装"</span>);</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.pruduct != NULL)</div><div class="line">    {</div><div class="line">      <span class="keyword">this</span>.product.transport();</div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//具体的装饰者2</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator2</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Decorator1</span>(IProduct product)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.product=product;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"纸盒"</span>;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transport</span>()</div><div class="line">  {</div><div class="line">    System.out.println(<span class="string">"用"</span>+<span class="keyword">this</span>.name+<span class="string">"包装"</span>);</div><div class="line">    <span class="keyword">if</span>(pruduct != NULL)</div><div class="line">    {</div><div class="line">      <span class="keyword">this</span>.product.method1();</div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String argv[])</div><div class="line">  {</div><div class="line">    IProduct product=<span class="keyword">new</span> Product(<span class="string">"电饭锅"</span>);</div><div class="line">    product=<span class="keyword">new</span> Decorator1(product);<span class="comment">//用泡沫包装</span></div><div class="line">    product=<span class="keyword">new</span> Decorator2(product);<span class="comment">//用纸盒包装</span></div><div class="line">    <span class="comment">/*之后product对象就是被纸盒包装又被泡沫包装的对象了*/</span></div><div class="line">    product.transport();<span class="comment">//从外到里依次输出包装物直到原产品，最后进行运输</span></div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/06/24/design-mode-command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          设计模式之Command模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/06/16/design-mode-observer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式学习之Observer模式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="design-mode-decorator" data-title="设计模式学习之Decorator模式" data-url="http://blog.lifejs.com/2013/06/18/design-mode-decorator/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

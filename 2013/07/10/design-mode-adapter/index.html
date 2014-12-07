@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>设计模式学习之Adapter模式 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天要说适配器模式了，适配器模式其实非常好理解，因为现实中存在很多不同种类的适配器，像usb转串口线就是讲usb接口和串口进行转换，VGA转HDMI线就是讲VGA接口和HDMI接口进行转换，这些都是硬件层次的，那么软件层次的就更好举例了，比如现在有某些usb设备，像usb无线键盘/鼠标啊，usb网卡等等如果直接插到电脑上是不会工作的，必须在电脑端还要装上相应的驱动程序，那么这个驱动程序其实就是一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式学习之Adapter模式">
+<meta property="og:url" content="http://blog.lifejs.com/2013/07/10/design-mode-adapter/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="今天要说适配器模式了，适配器模式其实非常好理解，因为现实中存在很多不同种类的适配器，像usb转串口线就是讲usb接口和串口进行转换，VGA转HDMI线就是讲VGA接口和HDMI接口进行转换，这些都是硬件层次的，那么软件层次的就更好举例了，比如现在有某些usb设备，像usb无线键盘/鼠标啊，usb网卡等等如果直接插到电脑上是不会工作的，必须在电脑端还要装上相应的驱动程序，那么这个驱动程序其实就是一个">
+<meta property="og:image" content="http://bcs.duapp.com/everdom-blog/blog/2013_09/taobaousb.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式学习之Adapter模式">
+<meta name="twitter:description" content="今天要说适配器模式了，适配器模式其实非常好理解，因为现实中存在很多不同种类的适配器，像usb转串口线就是讲usb接口和串口进行转换，VGA转HDMI线就是讲VGA接口和HDMI接口进行转换，这些都是硬件层次的，那么软件层次的就更好举例了，比如现在有某些usb设备，像usb无线键盘/鼠标啊，usb网卡等等如果直接插到电脑上是不会工作的，必须在电脑端还要装上相应的驱动程序，那么这个驱动程序其实就是一个">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-design-mode-adapter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/07/10/design-mode-adapter/" class="article-date">
+  	<time datetime="2013-07-10T04:38:00.000Z" itemprop="datePublished">Jul 10 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式学习之Adapter模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天要说适配器模式了，适配器模式其实非常好理解，因为现实中存在很多不同种类的适配器，像usb转串口线就是讲usb接口和串口进行转换，VGA转HDMI线就是讲VGA接口和HDMI接口进行转换，这些都是硬件层次的，那么软件层次的就更好举例了，比如现在有某些usb设备，像usb无线键盘/鼠标啊，usb网卡等等如果直接插到电脑上是不会工作的，必须在电脑端还要装上相应的驱动程序，那么这个驱动程序其实就是一个软件适配器，将usb设备转换成为操作系统能够识别的设备，其实，usb设备远不止这些，到淘宝一查，我来个去，真是什么都有啊：</p>
+<p><a href="http://bcs.duapp.com/everdom-blog/blog/2013_09/taobaousb.png" target="_blank" rel="external"><img src="http://bcs.duapp.com/everdom-blog/blog/2013_09/taobaousb.png" alt="taobaousb"></a></p>
+<p>其实这些设备不是都有适配器的，有很多只用使用usb进行供电，把usb当电源了，但有些数码设备是确实有适配器的，很简单的就是手机的充电线，现在的智能手机都有一根充电线和一个充电器，充电线的一头是连接手机的，另一头则是一个usb接口，这条线连接到充电器就能给手机充电，连接到电脑就能使电脑和手机之间传输数据。</p>
+<p>其实很早以前，就连鼠标键盘这种最常见的设备，都不是用的usb接口，而是用的PS/2接口，但现在支持usb接口的设备是越来越多啊，姑且不论usb到底为什么这么受欢迎（其实就是方便 :) ），我们只看这么多设备是如何做到支持usb接口的，难道说他们都会升级固件？那恐怕不尽然，除非是在usb接口普及之后所生产的新产品，否则那些旧产品要支持新的接口是不现实的，因为是硬件，厂商不可能回收后重做再给用户啊，那多亏啊。那这么说，那些旧产品就不能使用usb接口了啊，那usb接口怎么可能普及的这么快呢？答案是：适配器，不管是硬件的，还是软件的（驱动程序），都能</p>
+<p>使采用旧接口的设备使用新的接口。</p>
+<p>就比如usb网卡，一个usb网卡其实内部包含了一个usb接口与网卡的转接器，而在电脑端也有相应的网卡驱动让系统识别这是个网卡，它就有硬件和软件两个适配器，当用户需要从网络中请求数据时，操作系统会将请求编码后通过驱动程序从usb接口转发给网卡，网卡中的适配器对收到的请求进行解码后发送给网卡处理，网卡从互联网获得数据后将数据通过网卡适配器进行编码后通过usb接口发给电脑，电脑端操作系统通过驱动程序将数据再次解码后交给用户，这是不是有些复杂？</p>
+<p>哎，扯了这么多，还没进入正题呢，既然适配器适用于不同接口之间的转换，那么在设计模式中是如何做到的呢？<br> 还是照本宣科，先把定义摆出来：</p>
+<blockquote>
+<p><strong>适配器模式：</strong><br>将一个类的接口转换成客户希望的另外一个接口。Adapter 模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<p><strong>适用性：</strong></p>
+<ol>
+<li>你想使用一个已经存在的类，而它的接口不符合你的需求。</li>
+<li>你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类（即那些接口可能不一定兼容的类）协同工作。</li>
+<li>（仅适用于对象Adapter ）你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象适配器可以适配它的父类接口。</li>
+</ol>
+</blockquote>
+<p>定义总是概括性太强，不适合理解啊，有点懵了吧，下面来看个例子吧，就拿usb网卡来说，比如要做一个usb网卡驱动，操作系统提供的网卡API为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">INetCard</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> Host <span class="title">connect</span>(IPAddr ip);</div><div class="line">    <span class="keyword">public</span> NetData <span class="title">getData</span>(Host host);</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendData</span>(Host host, NetData data);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>而usb接口提供的API为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IUsb</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">public</span> UsbData <span class="title">getData</span>();</div><div class="line">    <span class="keyword">public</span> <span class="title">sendData</span>(UsbData data);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>网卡端的解码的方式为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetCardDecoder</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">private</span> UsbData data;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">NetCardDecoder</span>(data)</div><div class="line">    {</div><div class="line">        <span class="keyword">this</span>.data=data;</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doWork</span>(Operator operator)</div><div class="line">    {</div><div class="line">        operator.execute();</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> Operator <span class="title">decode</span>(UsbData data)</div><div class="line">    {</div><div class="line">        <span class="comment">//对USB接口获取的数据进行解析后对不同的请求返回不同的操作对象</span></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>现在我们要做网卡驱动，所以需要将网卡接口适配成Usb接口，所以我们创造一个网卡适配器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//网卡数据格式与Usb数据格式的转换工具类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataConvertorTool</span></span></div><div class="line">{</div><div class="line">    <span class="comment">//将UsbData转换NetData</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> NetData <span class="title">usbData2Net</span>(UsbData data)</div><div class="line">    {</div><div class="line"></div><div class="line">    }</div><div class="line">    <span class="comment">//将NetData转换UsbData</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> UsbData <span class="title">netData2Usb</span>(NetData data)</div><div class="line">    {</div><div class="line"></div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="comment">//网卡适配器类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetCardAdapter</span> <span class="keyword">implements</span> <span class="title">INetCard</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">private</span> IUsb usb;</div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetCardAdapter</span>(<span class="title">IUsb</span> <span class="title">usb</span>)//将被适配者传给适配器</span></div><div class="line">    {</div><div class="line">        <span class="keyword">this</span>.usb=usb;</div><div class="line">    }</div><div class="line">    <span class="comment">//适配网卡接口</span></div><div class="line">    <span class="keyword">public</span> Host <span class="title">connect</span>(IPAddr ip)</div><div class="line">    {</div><div class="line">        UsbData data=<span class="keyword">new</span> UsbData(<span class="string">"connect"</span>);</div><div class="line">        data.addParam(<span class="string">"ip"</span>, ip);</div><div class="line">        usb.sendData(data);</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> NetData <span class="title">getData</span>(Host host)</div><div class="line">    {</div><div class="line">        UsbData dataRequest=<span class="keyword">new</span> UsbData(<span class="string">"get"</span>);</div><div class="line">        data.addParam(<span class="string">"host"</span>, host);</div><div class="line">        usb.sendData(data);</div><div class="line">        UsbData dataUsbReceive=usb.getData();</div><div class="line">        NetData dataNetReceive=DataConvertorTool.usbData2Net(dataUsbReceive);</div><div class="line">        <span class="keyword">return</span> dataNetReceive;</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendData</span>(Host host, NetData data)</div><div class="line">    {</div><div class="line">        UsbData dataRequest=<span class="keyword">new</span> UsbData(<span class="string">"send"</span>);</div><div class="line">        dataRequest.addParam(<span class="string">"host"</span>, host);</div><div class="line">        dataRequest.addParam(<span class="string">"data"</span>,data);</div><div class="line">        usb.sendData(data);</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>从上述代码可以看出，适配器通过实现用户接口，并通过组合被适配者接口来实现接口之间的转换，但上述代码中我们只是实现了适配器的一种方式，即用组合的方式实现适配，其实，适配器模式还能使用另外一种方式，即类的多继承，但java中无法实现多继承，所以无法实现，但java支持多接口的继承，所以我个人认为其实概念上也是可以实现的，如果使用第二种方式，可以这样来写适配器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//网卡适配器类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetCardAdapter</span> <span class="keyword">implements</span> <span class="title">INetCard</span>, <span class="title">IUsb</span></span></div><div class="line">{</div><div class="line">    <span class="keyword">private</span> IUsb usb;</div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetCardAdapter</span>(<span class="title">IUsb</span> <span class="title">usb</span>)//将被适配者传给适配器</span></div><div class="line">    {</div><div class="line">        <span class="keyword">this</span>.usb=usb;</div><div class="line">    }</div><div class="line">    <span class="comment">//适配网卡接口</span></div><div class="line">    <span class="keyword">public</span> Host <span class="title">connect</span>(IPAddr ip)</div><div class="line">    {</div><div class="line">        UsbData data=<span class="keyword">new</span> UsbData(<span class="string">"connect"</span>);</div><div class="line">        data.addParam(<span class="string">"ip"</span>, ip);</div><div class="line">        usb.sendData(data);</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> NetData <span class="title">getData</span>(Host host)</div><div class="line">    {</div><div class="line">        UsbData dataRequest=<span class="keyword">new</span> UsbData(<span class="string">"get"</span>);</div><div class="line">        data.addParam(<span class="string">"host"</span>, host);</div><div class="line">        usb.sendData(data);</div><div class="line">        UsbData dataUsbReceive=usb.getData();</div><div class="line">        NetData dataNetReceive=DataConvertorTool.usbData2Net(dataUsbReceive);</div><div class="line">        <span class="keyword">return</span> dataNetReceive;</div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendData</span>(Host host, NetData data)</div><div class="line">    {</div><div class="line">        UsbData dataRequest=<span class="keyword">new</span> UsbData(<span class="string">"send"</span>);</div><div class="line">        dataRequest.addParam(<span class="string">"host"</span>, host);</div><div class="line">        dataRequest.addParam(<span class="string">"data"</span>,data);</div><div class="line">        usb.sendData(data);</div><div class="line">    }</div><div class="line">    <span class="comment">//继承了Usb接口</span></div><div class="line">    <span class="keyword">public</span> UsbData <span class="title">getData</span>()</div><div class="line">    {</div><div class="line"></div><div class="line">    }</div><div class="line">    <span class="keyword">public</span> <span class="title">sendData</span>(UsbData data)</div><div class="line">    {</div><div class="line"></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>但由于只能继承接口，所以对于Usb接口方法还必须重新实现，显然是不现实的，因为这样就不能实现代码的复用和封闭了，自然是没有意义的，但若在c++或其他支持多继承的语言中，通过多继承被适配器类而不是接口可以方便的实现代码复用。</p>
+<p>适配器模式与装饰者模式有些类似，它们都是结构型设计模式，然后都是对某个接口进行操作，但它们却有本质的不同：</p>
+<p>首先， <strong>适配器模式是将一个接口转换为另一个接口，而装饰者模式并不改变接口，只是在原实现上面动态的添加某种职责</strong> 。<br>其次， <strong>它们的引用对象不一样，适配器模式引用被适配者（属于另一个接口），而装饰者模式引用自身（同一个接口）</strong> 。<br>最后， <strong>它们的使用方式不一样，装饰者模式通过product=new ProductDecorator(product)来包装自身，而适配器模式通过product=new ProductAdapter(otherProduct)来像product一样使用otherProduct</strong> 。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/07/16/design-mode-facade/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          设计模式学习之Facade模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/07/02/design-mode-factory/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式学习之Factory Method模式和Abstract Factory模式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="design-mode-adapter" data-title="设计模式学习之Adapter模式" data-url="http://blog.lifejs.com/2013/07/10/design-mode-adapter/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

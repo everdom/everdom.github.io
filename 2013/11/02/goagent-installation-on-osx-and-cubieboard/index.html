@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goagent+的OSX安装和Cubieboard安装 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OSX安装：
+1.修改python文件夹权限
+1sudo chmod 777 /Library/Python/2.7/site-packages/
+
+
+安装brew：在终端执行
+
+1ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”  –请注意都是半角英文双引号
+
+
+安装libevent：在终端执行
+
+1brew install lib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="goagent+的OSX安装和Cubieboard安装">
+<meta property="og:url" content="http://blog.lifejs.com/2013/11/02/goagent-installation-on-osx-and-cubieboard/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="OSX安装：
+1.修改python文件夹权限
+1sudo chmod 777 /Library/Python/2.7/site-packages/
+
+
+安装brew：在终端执行
+
+1ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”  –请注意都是半角英文双引号
+
+
+安装libevent：在终端执行
+
+1brew install lib">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="goagent+的OSX安装和Cubieboard安装">
+<meta name="twitter:description" content="OSX安装：
+1.修改python文件夹权限
+1sudo chmod 777 /Library/Python/2.7/site-packages/
+
+
+安装brew：在终端执行
+
+1ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”  –请注意都是半角英文双引号
+
+
+安装libevent：在终端执行
+
+1brew install lib">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-goagent-installation-on-osx-and-cubieboard" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/11/02/goagent-installation-on-osx-and-cubieboard/" class="article-date">
+  	<time datetime="2013-11-02T09:16:00.000Z" itemprop="datePublished">Nov 2 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goagent/">goagent</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      goagent+的OSX安装和Cubieboard安装
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OSX安装：</p>
+<p>1.修改python文件夹权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> chmod <span class="number">777</span> /Library/Python/<span class="number">2.7</span>/site-packages/</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装brew：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="operator">-e</span> “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”  –请注意都是半角英文双引号</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装libevent：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install libevent</div></pre></td></tr></table></figure>
+
+<p>（Homebrew 缓存路径：/Library/Cache/Homebrew/下，如果下不下来，就手动下载并把压缩包放到这里即可)</p>
+<ol>
+<li>安装pip：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install pip</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装cython：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install cython</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装dnslib: 在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install dnslib</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装greenlet：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pip install greenlet</div></pre></td></tr></table></figure>
+
+<p>(以上命令如果运行不了就要切换到root再试，sudo su)</p>
+<ol>
+<li>安装gevent</li>
+</ol>
+<p>下载goagent所需的gevent-1.0的OSX版本：<a href="https://code.google.com/p/goagent/downloads/list" target="_blank" rel="external">https://code.google.com/p/goagent/downloads/list</a> 下载<a href="https://code.google.com/p/goagent/downloads/detail?name=gevent-1.0dev-macosx-intel.egg&amp;can=2&amp;q=" target="_blank" rel="external">gevent-1.0dev-macosx-intel.egg</a>，然后用easy_install 安装：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">easy_install</span> ~/gevent-<span class="number">1</span>.0dev-macosx-intel.egg</div></pre></td></tr></table></figure>
+
+<p>即可,如果下载源码编译，方法是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O [<span class="link_label">http://gevent.googlecode.com/files/gevent-1.0b4.tar.gz</span>](<span class="link_url">http://gevent.googlecode.com/files/gevent-1.0b4.tar.gz</span>) && tar xvzpf gevent-1.0b4.tar.gz && cd gevent-1.0b4 && python [<span class="link_label">setup.py</span>](<span class="link_url">http://setup.py/</span>) install</div></pre></td></tr></table></figure>
+
+<p>但编译不过，提示：clang: error: unsupported option ‘-static-libgcc’，估计是Xcode没用gcc，用clang的缘故</p>
+<ol>
+<li>安装<a href="https://code.google.com/p/goagent/downloads/detail?name=GoAgentMac.dmg&amp;can=2&amp;q=" target="_blank" rel="external">GoAgentMac.dmg</a>然后修改GoAgentMac包下的/Contents/Info.plist将GoAgentPath改为GoAgent+的proxy.py的完整路径即可</li>
+</ol>
+<p>附：<br>python包的通用安装方法：<a href="http://jiayanjujyj.iteye.com/blog/1409819" target="_blank" rel="external">Python的包管理工具 - - ITeye技术网站</a></p>
+<p>Cubieboard/Ubuntu安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install python-dev libevent python-pip curl</div><div class="line"><span class="built_in">sudo</span> apt-get install build-essential gcc</div><div class="line">pip install dnslib</div><div class="line">curl -O [http://gevent.googlecode.com/files/gevent-<span class="number">1.0</span>b4.tar.gz](http://gevent.googlecode.com/files/gevent-<span class="number">1.0</span>b4.tar.gz) && tar xvzpf gevent-<span class="number">1.0</span>b4.tar.gz && <span class="built_in">cd</span> gevent-<span class="number">1.0</span>b4 && python [setup.py](http://setup.py/) install</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/15/ruby-encoding-problem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Ruby编码问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/10/29/putty-garbled-solution/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Putty乱码解决</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="goagent-installation-on-osx-and-cubieboard" data-title="goagent+的OSX安装和Cubieboard安装" data-url="http://blog.lifejs.com/2013/11/02/goagent-installation-on-osx-and-cubieboard/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

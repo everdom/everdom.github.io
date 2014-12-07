@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[深海拾贝]]></title>
+  <subtitle><![CDATA[智慧与思想碰撞，科学与艺术汇合。]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://blog.lifejs.com/"/>
+  <updated>2014-12-07T16:12:34.756Z</updated>
+  <id>http://blog.lifejs.com/</id>
+  
+  <author>
+    <name><![CDATA[everdom]]></name>
+    <email><![CDATA[everdom.g@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[发布两个我做的chrome应用]]></title>
+    <link href="http://blog.lifejs.com/2014/10/22/publish-my-chrome-applications/"/>
+    <id>http://blog.lifejs.com/2014/10/22/publish-my-chrome-applications/</id>
+    <published>2014-10-21T16:15:59.000Z</published>
+    <updated>2014-12-07T15:58:09.000Z</updated>
+    <content type="html"><![CDATA[<p>这一段时间由于工作环境换成了linux，饱受了各种折腾的阵痛之后，哥决定下手实现一些急切的需求，最迫切的就属印象笔记和qq了，这两个常用的东西都没有linux版的客户端，不过两者都有网页版的，但网页版的终归纠结于要先打开浏览器，而且也不能做一些定制，于是乎，哥瞄准了chrome的packaged app这个狂野酷拽吊炸天的东西和chrome本身的跨平台特性，搞了两个chrome应用终于几本解决了燃眉之急～鼓掌～～撒花儿～～！</p>
+<p>首先是印象笔记啦，先放上安装地址：<br><a href="https://chrome.google.com/webstore/detail/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/lgeofkgcdepmadnmoendmocgolpbkfmp?utm_source=chrome-ntp-launcher" target="_blank" rel="external">https://chrome.google.com/webstore/detail/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/lgeofkgcdepmadnmoendmocgolpbkfmp?utm_source=chrome-ntp-launcher</a></p>
+<p>话说印象笔记后来升级了一下，界面更小清新了，好喜欢的赶脚哦～<br><a href="https://raw.github.com/everdom/ChromeEvernote/master/images/evernote preview3.png" target="_blank" rel="external"><img src="https://raw.github.com/everdom/ChromeEvernote/master/images/evernote preview3.png" alt="evernote preview3.png"></a></p>
+<p>话说短短两个月就有1200+用户了，哥是不是可以嘚瑟一下呢？嘻嘻～<br>然后是ChromeQQ，今天首发，很激动有木有！配上elementary os的界面效果真的好美有木有！<br><a href="https://raw.github.com/everdom/ChromeQQ/master/images/screenshot2.png" target="_blank" rel="external"><img src="https://raw.github.com/everdom/ChromeQQ/master/images/screenshot2.png" alt="screenshot2"></a></p>
+<p><a href="https://raw.github.com/everdom/ChromeQQ/master/images/screenshot4.png" target="_blank" rel="external"><img src="https://raw.github.com/everdom/ChromeQQ/master/images/screenshot4.png" alt="screenshot4"></a></p>
+<p>忍不住的话就安装一下吧：<br><a href="https://chrome.google.com/webstore/detail/chromeqq/pjkebmlmkppdjcdcilfcjdkifljollfd?gl=CN&amp;utm_source=chrome-ntp-icon" target="_blank" rel="external">https://chrome.google.com/webstore/detail/chromeqq/pjkebmlmkppdjcdcilfcjdkifljollfd?gl=CN&amp;utm_source=chrome-ntp-icon</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这一段时间由于工作环境换成了linux，饱受了各种折腾的阵痛之后，哥决定下手实现一些急切的需求，最迫切的就属印象笔记和qq了，这两个常用的东西都没有linux版的客户端，不过两者都有网页版的，但网页版的终归纠结于要先打开浏览器，而且也不能做一些定制，于是乎，哥瞄准了chro]]>
+    </summary>
+    
+      <category term="chrome" scheme="http://blog.lifejs.com/tags/chrome/"/>
+    
+      <category term="分享" scheme="http://blog.lifejs.com/categories/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Node-Webkit研究]]></title>
+    <link href="http://blog.lifejs.com/2014/08/09/node-webkit-study/"/>
+    <id>http://blog.lifejs.com/2014/08/09/node-webkit-study/</id>
+    <published>2014-08-09T07:24:40.000Z</published>
+    <updated>2014-12-07T13:57:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="收集入门文档，找到入门步骤">收集入门文档，找到入门步骤</h2>
+<p><a href="http://damoqiongqiu.iteye.com/blog/2010720" target="_blank" rel="external">http://damoqiongqiu.iteye.com/blog/2010720</a></p>
+<p>下载对应node-webkit版本：<a href="https://github.com/rogerwang/node-webkit" target="_blank" rel="external">https://github.com/rogerwang/node-webkit</a></p>
+<p>Create index.html:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line">    We are using node.js <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">document</span>.write(process.version)</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>.</div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>Create package.json:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">name</span>": <span class="value"><span class="string">"nw-demo"</span></span>,</div><div class="line">    "<span class="attribute">main</span>": <span class="value"><span class="string">"index.html"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>Run:<br>$ /path/to/nw . (suppose the current directory contains ‘package.json’)</p>
+<p>Note: on Windows, you can drag the folder containing package.json to nw.exe to open it.</p>
+<h2 id="研究官方文档，了解具体架构">研究官方文档，了解具体架构</h2>
+<p><a href="https://github.com/rogerwang/node-webkit" target="_blank" rel="external">https://github.com/rogerwang/node-webkit</a></p>
+<h3 id="运行应用">运行应用</h3>
+<p>直接在命令行参数中加上文件夹路径<br>把文件夹打成zip包改后缀名为nw再运行</p>
+<h2 id="下载代码，开发实例">下载代码，开发实例</h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="收集入门文档，找到入门步骤">收集入门文档，找到入门步骤</h2>
+<p><a href="http://damoqiongqiu.iteye.com/blog/2010720" target="_blank" rel="external">http://damo]]>
+    </summary>
+    
+      <category term="node" scheme="http://blog.lifejs.com/tags/node/"/>
+    
+      <category term="webkit" scheme="http://blog.lifejs.com/tags/webkit/"/>
+    
+      <category term="未分类" scheme="http://blog.lifejs.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Ruby编码问题]]></title>
+    <link href="http://blog.lifejs.com/2013/11/15/ruby-encoding-problem/"/>
+    <id>http://blog.lifejs.com/2013/11/15/ruby-encoding-problem/</id>
+    <published>2013-11-15T09:18:00.000Z</published>
+    <updated>2014-12-07T13:54:09.000Z</updated>
+    <content type="html"><![CDATA[<p>Ruby 1.93对中文似乎不大友好，特别是碰到中文路径，如果碰到incompatible encoding regexp match (GBK regexp with UTF-8 string)的错误，可能是由于中文路径的问题，因为rb源文件是utf-8的，而一旦涉及中文路径，实际上导入的是GBK的编码，所以可能报错，解决方法有<br>1、 rb源文件头部加上#encoding utf-8，然后在对应地方采用Encoding.default_external =’gbk’Encoding.default_internal =’utf-8’的方法将外部路径名转换成utf-8的编码<br>2、 采用encode(‘utf-8’)来对相应变量进行转码，如果用force_encoding的话转的码会是utf8编码的十六进制表示</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Ruby 1.93对中文似乎不大友好，特别是碰到中文路径，如果碰到incompatible encoding regexp match (GBK regexp with UTF-8 string)的错误，可能是由于中文路径的问题，因为rb源文件是utf-8的，而一旦涉及中文]]>
+    </summary>
+    
+      <category term="ruby" scheme="http://blog.lifejs.com/tags/ruby/"/>
+    
+      <category term="编码" scheme="http://blog.lifejs.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[goagent+的OSX安装和Cubieboard安装]]></title>
+    <link href="http://blog.lifejs.com/2013/11/02/goagent-installation-on-osx-and-cubieboard/"/>
+    <id>http://blog.lifejs.com/2013/11/02/goagent-installation-on-osx-and-cubieboard/</id>
+    <published>2013-11-02T09:16:00.000Z</published>
+    <updated>2014-12-07T13:53:08.000Z</updated>
+    <content type="html"><![CDATA[<p>OSX安装：</p>
+<p>1.修改python文件夹权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> chmod <span class="number">777</span> /Library/Python/<span class="number">2.7</span>/site-packages/</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装brew：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="operator">-e</span> “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”  –请注意都是半角英文双引号</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装libevent：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install libevent</div></pre></td></tr></table></figure>
+
+<p>（Homebrew 缓存路径：/Library/Cache/Homebrew/下，如果下不下来，就手动下载并把压缩包放到这里即可)</p>
+<ol>
+<li>安装pip：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">easy_install pip</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装cython：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install cython</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装dnslib: 在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install dnslib</div></pre></td></tr></table></figure>
+
+<ol>
+<li>安装greenlet：在终端执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> pip install greenlet</div></pre></td></tr></table></figure>
+
+<p>(以上命令如果运行不了就要切换到root再试，sudo su)</p>
+<ol>
+<li>安装gevent</li>
+</ol>
+<p>下载goagent所需的gevent-1.0的OSX版本：<a href="https://code.google.com/p/goagent/downloads/list" target="_blank" rel="external">https://code.google.com/p/goagent/downloads/list</a> 下载<a href="https://code.google.com/p/goagent/downloads/detail?name=gevent-1.0dev-macosx-intel.egg&amp;can=2&amp;q=" target="_blank" rel="external">gevent-1.0dev-macosx-intel.egg</a>，然后用easy_install 安装：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">easy_install</span> ~/gevent-<span class="number">1</span>.0dev-macosx-intel.egg</div></pre></td></tr></table></figure>
+
+<p>即可,如果下载源码编译，方法是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O [<span class="link_label">http://gevent.googlecode.com/files/gevent-1.0b4.tar.gz</span>](<span class="link_url">http://gevent.googlecode.com/files/gevent-1.0b4.tar.gz</span>) && tar xvzpf gevent-1.0b4.tar.gz && cd gevent-1.0b4 && python [<span class="link_label">setup.py</span>](<span class="link_url">http://setup.py/</span>) install</div></pre></td></tr></table></figure>
+
+<p>但编译不过，提示：clang: error: unsupported option ‘-static-libgcc’，估计是Xcode没用gcc，用clang的缘故</p>
+<ol>
+<li>安装<a href="https://code.google.com/p/goagent/downloads/detail?name=GoAgentMac.dmg&amp;can=2&amp;q=" target="_blank" rel="external">GoAgentMac.dmg</a>然后修改GoAgentMac包下的/Contents/Info.plist将GoAgentPath改为GoAgent+的proxy.py的完整路径即可</li>
+</ol>
+<p>附：<br>python包的通用安装方法：<a href="http://jiayanjujyj.iteye.com/blog/1409819" target="_blank" rel="external">Python的包管理工具 - - ITeye技术网站</a></p>
+<p>Cubieboard/Ubuntu安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install python-dev libevent python-pip curl</div><div class="line"><span class="built_in">sudo</span> apt-get install build-essential gcc</div><div class="line">pip install dnslib</div><div class="line">curl -O [http://gevent.googlecode.com/files/gevent-<span class="number">1.0</span>b4.tar.gz](http://gevent.googlecode.com/files/gevent-<span class="number">1.0</span>b4.tar.gz) && tar xvzpf gevent-<span class="number">1.0</span>b4.tar.gz && <span class="built_in">cd</span> gevent-<span class="number">1.0</span>b4 && python [setup.py](http://setup.py/) install</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>OSX安装：</p>
+<p>1.修改python文件夹权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><]]>
+    </summary>
+    
+      <category term="goagent" scheme="http://blog.lifejs.com/tags/goagent/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Putty乱码解决]]></title>
+    <link href="http://blog.lifejs.com/2013/10/29/putty-garbled-solution/"/>
+    <id>http://blog.lifejs.com/2013/10/29/putty-garbled-solution/</id>
+    <published>2013-10-29T09:15:00.000Z</published>
+    <updated>2014-12-07T13:54:23.000Z</updated>
+    <content type="html"><![CDATA[<p>打开putty主程序，选择window-〉Appearance-〉Font settings-〉Change…,选择Fixedsys字体,字符集选择CHINESE_GB2312。</p>
+<p>在window-〉Appearance -〉Translation中，修改Received data assumed to be in which character set 中和Linux中的字符集,把Use font encoding改为UTF-8。</p>
+<p>如果经常使用,把这些设置保存在session里面. 现在打开putty,登录成功后,在shell中输入:export LC_ALL=’zh_CN.utf8’ ，中文显示就正常了 。</p>
+<p>nano /etc/profile<br>加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> LC_ALL=<span class="string">'zh_CN.utf8‘</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>打开putty主程序，选择window-〉Appearance-〉Font settings-〉Change…,选择Fixedsys字体,字符集选择CHINESE_GB2312。</p>
+<p>在window-〉Appearance -〉Translation中，修改Rec]]>
+    </summary>
+    
+      <category term="putty" scheme="http://blog.lifejs.com/tags/putty/"/>
+    
+      <category term="乱码" scheme="http://blog.lifejs.com/tags/%E4%B9%B1%E7%A0%81/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[DspLink问题记录]]></title>
+    <link href="http://blog.lifejs.com/2013/10/29/dsplink-problems/"/>
+    <id>http://blog.lifejs.com/2013/10/29/dsplink-problems/</id>
+    <published>2013-10-29T09:13:00.000Z</published>
+    <updated>2014-12-07T13:58:54.000Z</updated>
+    <content type="html"><![CDATA[<p>编译TI的Dsp库的话，需要在dsplink下加入如下bat脚本，来进行编译环境设置</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">echo</span> off</div><div class="line"><span class="keyword">set</span> BASE_PERL = C:\Perl</div><div class="line"><span class="keyword">set</span> TI_TOOLS_BASE_DIR = D:\CCStudio_v3.<span class="number">3</span></div><div class="line"><span class="keyword">set</span> BIOS_INSTALL_DIR = <span class="envvar">%TI_TOOLS_BASE_DIR%</span>\bios_5_33_06</div><div class="line"><span class="keyword">set</span> XDC_INSTALL_DIR = <span class="envvar">%BIOS_INSTALL_DIR%</span>\xdctools</div><div class="line"><span class="keyword">set</span> CODEGEN_INSTALL_DIR = <span class="envvar">%TI_TOOLS_BASE_DIR%</span>\C6000\cgtools</div><div class="line"><span class="keyword">set</span> PATH = <span class="envvar">%XDC_INSTALL_DIR%</span>;<span class="envvar">%CODEGEN_INSTALL_DIR%</span>\bin;<span class="envvar">%PATH%</span></div><div class="line"></div><div class="line"><span class="keyword">cd</span> etc\host\scripts\msdos</div><div class="line"><span class="flow">call</span> dsplinkenv.bat</div><div class="line"><span class="flow">call</span> dsplinkcfg.bat --platform=OMAP3530 --nodsp=<span class="number">1</span> --dspcfg_0=OMAP3530SHMEM  -dspos_0=DSPBIOS5XX --gppos=WINCE --comps=ponslrmc --DspTskMode=<span class="number">1</span></div><div class="line"><span class="keyword">cd</span> ..\..\..\</div><div class="line">cmd</div></pre></td></tr></table></figure>
+
+<p>然后就可以编译dsplink库了：<br>在dsplink目录下：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> dsp\src</div><div class="line">gmake [-s] all VERBOSE=<span class="number">1</span></div></pre></td></tr></table></figure>
+
+<p>加VERBOSE=1可以看到调试输出<br>dsplink1.64版编译会失败，因为有个makefile有点问题，错误的加上了引号：<br>dsplink\make\DspBios\c64xxp_5.xx_windows.mk文件中去掉BASE_INSTALL，BASE_SABIOS，XDCTOOLS_DIR，BASE_CGTOOLS等号右边的路径的引号。<br>编译dsplink基本通信库之后就可以编译dsp端的例子程序了（gpp端无法编译，需要使用编译好的dsplinkapi.lib库）<br>在dsplink目录下：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> dsp\src\samples\</div><div class="line">gmake all</div></pre></td></tr></table></figure>
+
+<p>注意：这里的gmake是位于XDC_INSTALL_DIR下的gmake工具，是CCStudio带的，用GNU的make是不行的。另外，编译例子程序是依赖于基本库的</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>编译TI的Dsp库的话，需要在dsplink下加入如下bat脚本，来进行编译环境设置</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><div class="line">1</div>]]>
+    </summary>
+    
+      <category term="DSP" scheme="http://blog.lifejs.com/tags/DSP/"/>
+    
+      <category term="开发笔记" scheme="http://blog.lifejs.com/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Windows高精度时间函数]]></title>
+    <link href="http://blog.lifejs.com/2013/10/20/windows-high-precision-functions/"/>
+    <id>http://blog.lifejs.com/2013/10/20/windows-high-precision-functions/</id>
+    <published>2013-10-20T09:12:00.000Z</published>
+    <updated>2014-12-07T13:59:35.000Z</updated>
+    <content type="html"><![CDATA[<p>这个计时函数主要是通过tick数和tick频率来进行时间测量的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">LARGE_INTEGER secfreq;</div><div class="line">QueryPerformanceFrequency(&secfreq); <span class="comment">//获取每秒的tick，即tick频率</span></div><div class="line"><span class="keyword">double</span> msfreq;</div><div class="line">msfreq = secfreq.QuadPart / <span class="number">1000.0</span>; <span class="comment">//每毫秒的tick数</span></div><div class="line">LARGE_INTEGER lastTick;</div><div class="line">QueryPerformanceCounter(&lastTick); <span class="comment">//获得最后一次tick计数</span></div><div class="line"></div><div class="line"><span class="comment">// do something...</span></div><div class="line"></div><div class="line">LARGE_INTEGER curTick;</div><div class="line">QueryPerformanceCounter(&curTick); <span class="comment">//获得最后一次tick计数</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%lf ms"</span>, (curTick.QuadPart-lastTick.QuadPart) / msfreq);</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这个计时函数主要是通过tick数和tick频率来进行时间测量的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class]]>
+    </summary>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[GTK电台开发问题]]></title>
+    <link href="http://blog.lifejs.com/2013/10/19/gtk-radio-development-problem/"/>
+    <id>http://blog.lifejs.com/2013/10/19/gtk-radio-development-problem/</id>
+    <published>2013-10-18T16:36:00.000Z</published>
+    <updated>2014-12-07T14:05:55.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>ubuntu 13.04，webkit里面显示的都是宋体，而且启动程序时xterm里面显示Fontconfig warning: “/etc/fonts/conf.d/50-user.conf”, line 9: reading configurations from ~/.fonts.conf is deprecated.的错误，解决方法</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir ~/.config/fontconfig</div><div class="line">mv ~/.fonts.conf ~/.config/fontconfig/</div></pre></td></tr></table></figure>
+
+<p><strong>Failed to load module “overlay-scrollbar”问题</strong><br>是由于overlay-scrollbar引起的，可以通过卸载overlay-scrollbar解决，不过对程序不影响<br>GTK窗口的显示问题：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtk_window_present (GTK_WINDOW(appViewHandle));</div><div class="line">gtk_widget_show_all(appViewHandle);</div></pre></td></tr></table></figure>
+
+<p>两个必须连用，否则可能出现窗口不能在最上层显示的问题，有可能是最小化后不能恢复显示，有可能是窗口被其他窗口覆盖不能在顶端显示<br>另外，gtk_widget_present不要与以下函数一起用，如果一起用，也会出现上述问题</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gtk_window_deiconify (GTK_WINDOW(appViewHandle));</div><div class="line">gtk_widget_activate(appViewHandle);</div></pre></td></tr></table></figure>
+
+<p><strong>至于flash的问题，先下载nspluginwrapper，还有32位的库，即：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install nspluginwrapper</div><div class="line"><span class="built_in">sudo</span> apt-get install ia32-libs ia32-libs-gtk linux32 lib32asound2</div></pre></td></tr></table></figure>
+
+<p>然后把32位的libflashplayer.so移到~/.mozilla/plugins/libflashplayer.so<br>然后运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nspluginwrapper -i ~/.mozilla/plugins/libflashplayer.so</div></pre></td></tr></table></figure>
+
+<p><strong>autogen时出错：HAVE_INTROSPECTION does not appear in AM_CONDITIONAL解决方法：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install gobject-introspection</div></pre></td></tr></table></figure>
+
+<p><strong>gtkdocize: not found错误，解决方法：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install gtk-doc-tools</div></pre></td></tr></table></figure>
+
+<p><strong>configure.ac checks: GOBJECT_INTROSPECTION_CHECK错误，解决方法：</strong><br>重新构建工程即可</p>
+<p>this macro does not exist if GObject Introspection is not installed.<br>in ubuntu 10.04, can install gobject-introspection (0.9.3-0ubuntu4),<br>if also failed, use autogen.sh to regenerate.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>ubuntu 13.04，webkit里面显示的都是宋体，而且启动程序时xterm里面显示Fontconfig warning: “/etc/fonts/conf.d/50-user.conf”, line 9: reading configurations]]>
+    </summary>
+    
+      <category term="开发笔记" scheme="http://blog.lifejs.com/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[容易忽略的基础问题]]></title>
+    <link href="http://blog.lifejs.com/2013/10/18/some-basic-problems-easy-to-ignore/"/>
+    <id>http://blog.lifejs.com/2013/10/18/some-basic-problems-easy-to-ignore/</id>
+    <published>2013-10-18T09:21:00.000Z</published>
+    <updated>2014-12-07T14:10:46.000Z</updated>
+    <content type="html"><![CDATA[<p>今天遇到一个很基础的问题，如果一个函数要传出一个结构体，用值形式的返回值传出，与用引用加赋值的形式传出，与用指针然后memcpy的形式拷贝传出，与用引用形式的返回值，与用指针形式的返回值传出，与用指针不memcpy的形式传出传出的区别。得出以下结论：</p>
+<ol>
+<li>用值形式的返回值传出会在栈中留有一份结构体的拷贝。</li>
+<li>用引用和赋值的形式传出和用指针然后memcpy的形式拷贝传出基本等价，但用指针和memcpy的形式的话，需要知道外界的缓冲区大小，而引用由于有类型，所以事先已经知道了外界缓冲区的大小，不会发生缓冲区溢出等问题。</li>
+<li>用引用或指针形式的返回值传出会暴露对象内部的内容，破坏了封装性</li>
+<li>所以设计接口的时候，对于基本类型，尽量通过返回值的形式传出，而对于结构体，尽量用引用的形式传出，对于OOP，除非有特殊需要，都要保证以值的形式传出。</li>
+</ol>
+<p>又一个基础问题，即memset的使用，memset第二个参数为int型的，只能给字符型的数据赋值，也就0-255。所以不要期望通过memset给一个float型的数组幅值，否则将得不到期望的结果。而且就算是给一个int型幅值，也只能赋0-255之间的值。</p>
+<p>对于程序调试，当逻辑上找不到错误时，很有可能是类型上出现了错误。比如一个这样的循环：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">INT8 i=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">256</span>; i++)</div><div class="line">{</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"hello world"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>这会导致什么呢？一个死循环！！！<br>c语言函数中所有的定义必须在函数开头！<br>在函数外部只能定义变量是不能运行代码的！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天遇到一个很基础的问题，如果一个函数要传出一个结构体，用值形式的返回值传出，与用引用加赋值的形式传出，与用指针然后memcpy的形式拷贝传出，与用引用形式的返回值，与用指针形式的返回值传出，与用指针不memcpy的形式传出传出的区别。得出以下结论：</p>
+<ol>
+<l]]>
+    </summary>
+    
+      <category term="c/c++" scheme="http://blog.lifejs.com/tags/c-c/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux托盘菜单（或indicator）开发]]></title>
+    <link href="http://blog.lifejs.com/2013/10/09/linux-status-menu-development/"/>
+    <id>http://blog.lifejs.com/2013/10/09/linux-status-menu-development/</id>
+    <published>2013-10-09T09:22:00.000Z</published>
+    <updated>2014-12-07T14:15:50.000Z</updated>
+    <content type="html"><![CDATA[<p>在Gnome2时代，托盘菜单广泛采用GtkStatusIcon，但在gnome3时代好像也可以，但ubuntu13.04之后unity不支持GtkStatusIcon了（ubuntu12可以通过白名单的形式解除这一限制），所以在ubuntu13.04的unity下使用GtkStatusIcon会没有任何显示，所以得用libappindicator来显示托盘菜单，实际上ubuntu并没有去除托盘菜单这个东西，只不过把托盘菜单改了个名为indicator applet，规范了些，不过差不多，加了点限制而已，使用还是挺方便的。</p>
+<p>之后研究了些高级菜单，就是说菜单项里面包含一些其他控件，比如一个播放器想要托盘菜单控制音量，如果只是简单的菜单，可想而知控制音量多么不方便，显然应该在菜单中加个滑块嘛。所以这个需求咋整呢，把ubuntu的系统indicator的源码down下来研究了一下，找到一种继承GtkMenuItem的自定义控件类的方法，即做一个GtkMenuItem的子类，不过这个子类里面包含了一些其他控件，如滑块啊，切换按钮啊，日历啊什么的。这些自定义控件在一个libido库里面（真爽，不用自己费心了）。这样按说使用这个自定义MenuItem来替换之前的MenuItem就能达到高级控件的效果了，而且还可以捕获事件信号，但libappindicator这个库真TMD让人无语，替换自定义的MenuItem之后，托盘菜单上所有原始的MenuItem都能正常显示，而自定义的MenuItem貌似只能显示出原始MenuItem的元素，控件那些都不见了，妹的。可是如果不用libappindicator，用原生的GtkMenuBar来显示菜单，却是可以的。真是奇葩啊。而且在xfce和kde，gnome3环境下貌似也是可以的？（需要再次验证一下），为啥呢？</p>
+<p>没办法，对于这种奇葩的问题，目前有点免疫力，另辟蹊径了罢。不用libappindicator罢，于是找到了libinidcator和dbus-menu这两个高端货，libindicator文档缺乏，研究麻烦，转战到dbus-menu，找到一些文章，dbus是linux下的一个进程间通信的东东，很强大，可以实现gtk，qt进程间通信。dbus-menu自然就能共享菜单了。不过呢，今天down了一个indicator-applet的代码，又被我发现了一个最TMD简单的解决方案（需要验证一下），就是呢，GtkMenuItem是GtkContainter的子类！我擦！直接gtk_container_add完事！亏我搞了这么久真是没想到啊。不过对于dbus-menu确实也可以研究一下，多进程共享菜单还是挺诱人的嘛，君不见ubuntu的那个很爽的音量indicator吗？可以集成多个播放器哦亲！</p>
+<p>说到dbus，还有高级货，mpris和osd-lyrics！mpris是一个播放器控制接口，如果要集成自己的播放器到音量indicator中，就得实现这个，更重要的是，实现这个之后还能通过osd-lyrics来显示歌词哦亲啊，我的亲啊，这尼玛又免去了一大堆代码啊，有木有，开源的世界就是协作啊，各种拼接啊。哈哈。所以，对播放器来说，必须得搞定mpris这货，加油！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在Gnome2时代，托盘菜单广泛采用GtkStatusIcon，但在gnome3时代好像也可以，但ubuntu13.04之后unity不支持GtkStatusIcon了（ubuntu12可以通过白名单的形式解除这一限制），所以在ubuntu13.04的unity下使用Gtk]]>
+    </summary>
+    
+      <category term="indicator" scheme="http://blog.lifejs.com/tags/indicator/"/>
+    
+      <category term="linux" scheme="http://blog.lifejs.com/tags/linux/"/>
+    
+      <category term="开发笔记" scheme="http://blog.lifejs.com/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[GTK开发之托盘与通知]]></title>
+    <link href="http://blog.lifejs.com/2013/10/07/gtk-status-icon-and-notification/"/>
+    <id>http://blog.lifejs.com/2013/10/07/gtk-status-icon-and-notification/</id>
+    <published>2013-10-07T09:23:00.000Z</published>
+    <updated>2014-12-07T14:21:09.000Z</updated>
+    <content type="html"><![CDATA[<p>在ubuntu的unity下是不显示托盘图标的，在13.04版本之前可以通过gconf-editor中开启白名单激活托盘图标，其实这个问题是由于ubuntu采用了indicator（appindicator,  libappindicator）而不支持gtkstatusicon的缘故，所以应用程序要显示托盘图标的话，只需通过libappindicator即可，当然，对于老版本或者没有安装libappindicator库的情况下，还是应该采用gtkstatusicon的办法，所以，可以在安装配置中检测相应的库，而相应的选择对应的实现方式。<br>(注意，如果是gtk3必须用libappindicator3: sudo apt-get install libappindicator3-dev)</p>
+<p>ubuntu的notification接口中，set_time_out接口如果设置的超时时间小于1000（毫秒），将会导致通知一直显示不消退。</p>
+<p>另外，unity也可以开发，支持右键菜单，具体可以参看<a href="http://developer.ubuntu.com" target="_blank" rel="external">http://developer.ubuntu.com</a>中的教程。实例代码可以参看xmradio。</p>
+<p>gnome3的indicator程序真的很酷！</p>
+<h3 id="indicator开发：">indicator开发：</h3>
+<p>需要先set_menu，然后gtk_widget_show菜单才能正确显示indicator和菜单<br>libido库里面包含有滑块的菜单项。</p>
+<h3 id="G_BEGIN_DECLS和_G_END_DECLS">G_BEGIN_DECLS和 G_END_DECLS</h3>
+<p>这个是GLIB什么的一个宏，你可以看看glib的gmacro.h，编译时候指定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pkg-config   --cflags   glib-<span class="number">2.0</span></div></pre></td></tr></table></figure>
+
+<p>包含glib的头文件   </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  <span class="preprocessor">#ifdef     __cplusplus   </span></div><div class="line">  <span class="preprocessor">#   <span class="keyword">define</span>   G_BEGIN_DECLS     extern   "C"   {   </span></div><div class="line">  <span class="preprocessor">#   <span class="keyword">define</span>   G_END_DECLS         }   </span></div><div class="line">  <span class="preprocessor">#<span class="keyword">else</span>   </span></div><div class="line">  <span class="preprocessor">#   <span class="keyword">define</span>   G_BEGIN_DECLS   </span></div><div class="line">  <span class="preprocessor">#   <span class="keyword">define</span>   G_END_DECLS   </span></div><div class="line">  <span class="preprocessor">#<span class="keyword">endif</span></span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在ubuntu的unity下是不显示托盘图标的，在13.04版本之前可以通过gconf-editor中开启白名单激活托盘图标，其实这个问题是由于ubuntu采用了indicator（appindicator,  libappindicator）而不支持gtkstatusic]]>
+    </summary>
+    
+      <category term="gtk" scheme="http://blog.lifejs.com/tags/gtk/"/>
+    
+      <category term="开发笔记" scheme="http://blog.lifejs.com/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[GTK编程问题记录]]></title>
+    <link href="http://blog.lifejs.com/2013/10/05/gtk-programming-problems/"/>
+    <id>http://blog.lifejs.com/2013/10/05/gtk-programming-problems/</id>
+    <published>2013-10-05T09:23:00.000Z</published>
+    <updated>2014-12-07T14:24:31.000Z</updated>
+    <content type="html"><![CDATA[<p>今天发现一个问题，就是GTK的事件传值问题，如果在一个函数里面定义一个局部变量，然后将此变量指针传给GTK事件，再在GTK事件处理函数中重新取得该变量时，发现该变量值已经失效，也就是已经被释放掉了，原因是因为局部变量存储于栈空间，该栈空间的生命周期只存在于该函数内，一旦函数运行完毕，栈空间将被清空，而GTK事件显然是另一个函数，而且还必须是全局的，因此在该函数中引用一个其他函数栈空间内的变量指针显然无法得到正确的结果。实例如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> btn_click (GtkButton *button, <span class="keyword">const</span> <span class="keyword">char</span> * user_data)</div><div class="line">{</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"whywhywhy%s\n"</span>,user_data);    <span class="comment">//这儿user_data的值是无效的！</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> test()</div><div class="line">{</div><div class="line">    <span class="keyword">const</span> <span class="keyword">char</span> str[<span class="number">20</span>] = <span class="string">"fuckyou"</span>;</div><div class="line"></div><div class="line">    ...</div><div class="line"></div><div class="line">    button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);</div><div class="line">    g_signal_connect (button, <span class="string">"clicked"</span>, G_CALLBACK(btn_click), (gpointer)str);</div><div class="line">    gtk_box_pack_start (GTK_BOX (vbox), button, TRUE, TRUE, <span class="number">0</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>另外，如果将str数组改为常量字符指针，即：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">"fuckyou"</span>;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">g_signal_connect (button, <span class="string">"clicked"</span>, G_CALLBACK(btn_click), (gpointer)str);</div></pre></td></tr></table></figure>
+
+<p>如此，在btn_click中是能够获得str的值的，为什么呢？因为常量会放到常量存储区里，所以不会被释放掉。</p>
+<p>那解决方法是什么呢？其实，只需要在test函数中声明一个静态局部变量或者用一个静态指针指向临时变量(C++才行)，就能达到局部变量全局存储的效果，相当于扩大了生命周期，有点想lambda表达式的核心思想。</p>
+<p>具体写法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">char</span> str[<span class="number">20</span>] = <span class="string">"fuckyou"</span>;</div></pre></td></tr></table></figure>
+
+<p>或者（C++中才可以），比如在一个类的成员函数中：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> test = <span class="string">"great"</span>;</div><div class="line"><span class="keyword">static</span> <span class="built_in">string</span> strTmp = test;                 <span class="comment">// 用于扩大生命周期到整个对象</span></div><div class="line">g_signal_connect(G_OBJECT(menuItem), <span class="string">"activate"</span>, G_CALLBACK(Gtk3StatusMenuView::OnJsMenuClick), (gpointer)test.c_str());</div></pre></td></tr></table></figure>
+
+<p>但用原始char指针在C++中也行不通：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> test[<span class="number">20</span>]=<span class="string">"great"</span>;</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">char</span> *strTmp = test; <span class="comment">// 无效！</span></div><div class="line"></div><div class="line">g_signal_connect(G_OBJECT(menuItem), <span class="string">"activate"</span>, G_CALLBACK(Gtk3StatusMenuView::OnJsMenuClick), (gpointer)test);</div></pre></td></tr></table></figure>
+
+<p>原因应该是strTmp仅仅扩大了test数组常量指针的生命周期，该数组元素还是被释放掉了。<br>真蛋疼！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天发现一个问题，就是GTK的事件传值问题，如果在一个函数里面定义一个局部变量，然后将此变量指针传给GTK事件，再在GTK事件处理函数中重新取得该变量时，发现该变量值已经失效，也就是已经被释放掉了，原因是因为局部变量存储于栈空间，该栈空间的生命周期只存在于该函数内，一旦函数]]>
+    </summary>
+    
+      <category term="gtk" scheme="http://blog.lifejs.com/tags/gtk/"/>
+    
+      <category term="linux" scheme="http://blog.lifejs.com/tags/linux/"/>
+    
+      <category term="开发笔记" scheme="http://blog.lifejs.com/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Google NACL下载问题]]></title>
+    <link href="http://blog.lifejs.com/2013/10/01/google-nacl-download-problem/"/>
+    <id>http://blog.lifejs.com/2013/10/01/google-nacl-download-problem/</id>
+    <published>2013-10-01T15:07:00.000Z</published>
+    <updated>2014-12-07T14:26:07.000Z</updated>
+    <content type="html"><![CDATA[<p>google的nacl（native client） SDK在运行./nacl_sdk update的时候始终无法完成下载，究其原因是因为https隧道网络不稳定造成的，所以解决方法有2：</p>
+<ol>
+<li>在sdk_tools/command/update.py中将_UpdateBundle函数中下载bundle的地方将档案地址打印出来，即在346行（pepper_29）加入如下语句：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Display the url of the bundle</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'Bundle url: %s'</span> % (archive.url)</div></pre></td></tr></table></figure>
+
+<p>然后在浏览器中用http下载，最后放到sdk<em>cache/archives/peper</em>版本号/下，然后再执行./nacl_sdk update即可</p>
+<ol>
+<li>将https协议的地址转换为http协议的地址然后再下载，即在update.py（pepper_29）的336行加入如下语句：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Emit the https verification to speed and gurantee the downloaing.</span></div><div class="line">    <span class="keyword">if</span> archive.url[<span class="number">0</span>:<span class="number">8</span>] == <span class="string">'https://'</span>:</div><div class="line">        archive.url = <span class="string">'http://'</span>+ archive.url[<span class="number">8</span>:]</div></pre></td></tr></table></figure>
+
+<p>然后再执行./nacl_sdk update即可</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>google的nacl（native client） SDK在运行./nacl_sdk update的时候始终无法完成下载，究其原因是因为https隧道网络不稳定造成的，所以解决方法有2：</p>
+<ol>
+<li>在sdk_tools/command/update.py中]]>
+    </summary>
+    
+      <category term="chrome" scheme="http://blog.lifejs.com/tags/chrome/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CubieBoard-网络配置]]></title>
+    <link href="http://blog.lifejs.com/2013/09/29/cubieboard-network-config/"/>
+    <id>http://blog.lifejs.com/2013/09/29/cubieboard-network-config/</id>
+    <published>2013-09-29T09:14:00.000Z</published>
+    <updated>2014-12-07T14:31:22.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="有线的连接方法">有线的连接方法</h3>
+<p>如果路由器有有线网口，那就直接把板子直连到路由器上再重启网络服务即可，但我的路由器没有无线网口，于是可以通过桥接的方法，要准备一根网线，然后在笔记本上用无线连接网络，之后通过桥接将无线网络共享到网线口，然后将电脑和板子的有线口直连起来，然后在板子上配置/etc/network/interface，另外还要配置dns，在/etc/resolv.conf下，可以参考： <a href="http://forum.cubietech.com/forum.php?mod=viewthread&amp;tid=132" target="_blank" rel="external">[教程]通过网线直连，Cubieboard共享电脑的WIFI - DIY作品区 - Cubieboard中文论坛 - Powered by Discuz!</a></p>
+<p>#nano /etc/network/interfaces</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopbackiface eth0 inet static</div><div class="line">address <span class="number">192.168</span>.<span class="number">1.1</span></div><div class="line">gateway <span class="number">192.168</span>.<span class="number">1.253</span></div><div class="line">netmask <span class="number">255.255</span>.<span class="number">255.0</span></div></pre></td></tr></table></figure>
+
+<p>#nano /etc/resolv.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nameserver <span class="number">202.96</span>.<span class="number">134.133</span></div><div class="line">nameserver <span class="number">202.96</span>.<span class="number">134.33</span></div><div class="line"><span class="comment"># Google DNS</span></div><div class="line">nameserver <span class="number">8.8</span>.<span class="number">8.8</span></div><div class="line">nameserver <span class="number">8.8</span>.<span class="number">4.4</span></div></pre></td></tr></table></figure>
+
+<p><strong>添加默认网关</strong><br>#route add default gw 192.168.1.253<br>#service networking restart<br>#ifup eth0</p>
+<h3 id="无线的连接方法">无线的连接方法</h3>
+<p>如果路由器采用WEP的加密，可以直接配置，但如果采用的是WPA/WPA2的方式，就要要先安装wpa-supplicant，（cubieboard2 的ubuntu 12.10-v5上已经自带不需要再安装），再进行配置，配制方法是： <a href="http://cb.e-fly.org/archives/system-network-hardware-wifi.html" target="_blank" rel="external">CB/RPi 下安装使用USB无线网卡 - Learning Notes</a></p>
+<p>#nano /etc/network/interfaces</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 加入无线配置</span></div><div class="line">auto wlan0</div><div class="line">iface wlan0 inet static</div><div class="line"></div><div class="line">address <span class="number">192.168</span>.<span class="number">1.2</span></div><div class="line">gateway <span class="number">192.168</span>.<span class="number">1.253</span></div><div class="line">netmask <span class="number">255.255</span>.<span class="number">255.0</span></div><div class="line">wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf</div></pre></td></tr></table></figure>
+
+<p>#wpa_passphrase [“SSID”] [“密码”] &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf<br>#service networking restart</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="有线的连接方法">有线的连接方法</h3>
+<p>如果路由器有有线网口，那就直接把板子直连到路由器上再重启网络服务即可，但我的路由器没有无线网口，于是可以通过桥接的方法，要准备一根网线，然后在笔记本上用无线连接网络，之后通过桥接将无线网络共享到网线口，然后将电脑和]]>
+    </summary>
+    
+      <category term="cubieboard" scheme="http://blog.lifejs.com/tags/cubieboard/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CubieBoard-服务搭建]]></title>
+    <link href="http://blog.lifejs.com/2013/09/01/cubieboard-service-build/"/>
+    <id>http://blog.lifejs.com/2013/09/01/cubieboard-service-build/</id>
+    <published>2013-08-31T16:35:00.000Z</published>
+    <updated>2014-12-07T14:38:05.000Z</updated>
+    <content type="html"><![CDATA[<p>为了一次性安装所有服务，先安装如下包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install wpasupplicant ntfs-<span class="number">3</span>g openssh-server tightvncserver git aria2 transmission-daemon samba cron minidlna mldonkey-server</div><div class="line">apt-get install nginx php5-fpm php5-cli php5-curl php5-gd php5-mcrypt php5-mysql php5-cgi mysql-server node</div></pre></td></tr></table></figure>
+
+<p>遇到了情况，一次性安装所有软件失败，可能是有些位置空间不够的原因，可以分两次来安装，第一次安装之后清理缓存apt-get clean，再进行第二次安装<br>如果要安装开发环境的话</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install pkg-config libusb-<span class="number">1.0</span></div><div class="line">apt-get install build-essential</div></pre></td></tr></table></figure>
+
+<p>因为NAND空间紧张，最后清理一下缓存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get clean</div></pre></td></tr></table></figure>
+
+<h3 id="配置无线">配置无线</h3>
+<p>参考<a href="http://blog.lifejs.com/2013/09/29/cubieboard-network-config/" target="_blank" rel="external">CubieBoard-网络配置</a></p>
+<h3 id="配置tightvncserver">配置tightvncserver</h3>
+<p><a href="http://bbs.shumeipai.org/thread-113-1-1.html" target="_blank" rel="external">VNC远程登录树莓派的图形界面（桌面环境）[一帖完结] - 教程发布区 - 树莓爱好者论坛 - Powered by Discuz!</a><br>完了之后再编辑/root/.vnc/xstartup<br>#nano /root/.vnc/xstartup<br>加入start lubuntu &amp;这一句，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"></div><div class="line">xrdb <span class="variable">$HOME</span>/.Xresources</div><div class="line">xsetroot -solid grey</div><div class="line"><span class="comment">#x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &</span></div><div class="line"><span class="comment">#x-window-manager &</span></div><div class="line">startlubuntu &</div><div class="line"><span class="comment"># Fix to make GNOME work</span></div><div class="line"><span class="keyword">export</span> XKL_XMODMAP_DISABLE=<span class="number">1</span></div><div class="line">/etc/X11/Xsession</div></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service tightvncserver stop</div><div class="line">service tightvncserver start</div></pre></td></tr></table></figure>
+
+<p>即可</p>
+<h3 id="配置nginx">配置nginx</h3>
+<p>参考<a href="http://cb.e-fly.org/archives/cb-rpi-server-lnmp.html" target="_blank" rel="external">CB/Pi 下安装配置优化LNMP环境 - Learning Notes</a></p>
+<h3 id="配置aria2">配置aria2</h3>
+<p>参考<a href="http://blog.jyoryo.com/archives/38.html" target="_blank" rel="external">Cubieboard BT下载机 —— aria2 - CubieBoard 里程碑 - jyoryo的博客</a></p>
+<h3 id="配置transimission-daemon">配置transimission-daemon</h3>
+<p>参考<a href="http://cb.e-fly.org/archives/system-transmission-pt-bt.html" target="_blank" rel="external">安装 Transmission 的流水记录 - Learning Notes</a></p>
+<p>但遇到了aria2和transimission的BT下载都没速度的问题，暂时现实验一下：</p>
+<ol>
+<li>设定限速试下</li>
+<li>查看配置是否有BT选项，如incomplete-dir-enabled设成false</li>
+<li>将后台服务用前台运行查看</li>
+</ol>
+<h3 id="配置samba">配置samba</h3>
+<p>参考<a href="http://cb.e-fly.org/archives/system-nas-samba.html" target="_blank" rel="external">安装 Samba 开启NAS网络邻居共享 - Learning Notes</a><br>配置过程中发现windows上无法发现设备，于是把后台服务禁掉，用前台运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service smbd stop</div><div class="line">smbd -FS</div></pre></td></tr></table></figure>
+
+<p>一运行，发现爆了两个错误，是关于打印机的，解决方法参考</p>
+<ol>
+<li><a href="http://www.andowson.com/posts/list/312.page" target="_blank" rel="external">解决Samba Server Unable to connect to CUPS server localhost:631 - 连线被拒绝问题</a></li>
+<li><a href="http://www.cnblogs.com/CrazyWill/archive/2006/08/11/474645.html" target="_blank" rel="external">安装 samba 记录 - CrazyWill - 博客园</a></li>
+</ol>
+<h3 id="安装mimidlna">安装mimidlna</h3>
+<p>参考<a href="http://bbs.shumeipai.org/thread-113-1-1.html" target="_blank" rel="external">Cubieboard通过aria2和minidlna来架设家庭媒体中心 - Q.Lee.lulu - 博客园</a></p>
+<h3 id="中文配置">中文配置</h3>
+<p>安装文泉驿字体：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install xfonts-wqy</div></pre></td></tr></table></figure>
+
+<p>文泉驿正黑微米黑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install ttf-wqy-zenhei</div><div class="line"><span class="built_in">sudo</span> apt-get install ttf-wqy-microhei</div></pre></td></tr></table></figure>
+
+<p>或者这个通用的中文字体</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install ttf-arphic-uming</div></pre></td></tr></table></figure>
+
+<p>创建编码字符集</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> locale-gen zh_CN.UTF-<span class="number">8</span></div><div class="line"><span class="built_in">sudo</span> dpkg-reconfigure locales</div></pre></td></tr></table></figure>
+
+<p>编辑~/.bashrc或者/etc/environment，加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LANG=<span class="string">"zh_CN.UTF-8"</span></div><div class="line">LANGUAGE=<span class="string">"zh_CN:zh:en_US:en"</span></div></pre></td></tr></table></figure>
+
+<p>重启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>为了一次性安装所有服务，先安装如下包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</d]]>
+    </summary>
+    
+      <category term="cubieboard" scheme="http://blog.lifejs.com/tags/cubieboard/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CubieBoard问题记录-分区问题]]></title>
+    <link href="http://blog.lifejs.com/2013/08/27/cubieboard-partipation-problem/"/>
+    <id>http://blog.lifejs.com/2013/08/27/cubieboard-partipation-problem/</id>
+    <published>2013-08-27T09:17:00.000Z</published>
+    <updated>2014-12-07T14:41:15.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>遇到的问题：</strong><br>如果将dev/nande格式化为EXT4分区，开机就会出现hotplug问题，估计是cubieboard上的分区是采用sanxi-tools的nand-pard来分的，估计它的MBR（硬盘分区表）是比较特殊的，所以如果采用fdisk和格式化命令，将会导致MBR改变，然后Magic Number也改变了，于是内核启动时就会报错，也有可能是/etc/nande中有一些配置信息，内核启动时会读取，格式化之后读取不了就会崩溃<br>崩溃时的启动信息:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">/dev/nandd: clean, <span class="number">57466</span>/<span class="number">130304</span> files, <span class="number">316309</span>/<span class="number">524288</span> blocks</div><div class="line">e2fsck <span class="number">1.41</span><span class="number">.14</span> (<span class="number">22</span>-Dec-<span class="number">2010</span>)</div><div class="line">/dev/nande: clean, <span class="number">11</span>/<span class="number">112224</span> files, <span class="number">15906</span>/<span class="number">448512</span> blocks</div><div class="line">&lt;<span class="number">6</span>&gt;EXT4-fs (nandd): mounted filesystem <span class="keyword">with</span> ordered data mode. Opts: (<span class="keyword">null</span>)</div><div class="line">&lt;<span class="number">6</span>&gt;EXT4-fs (nande): mounted filesystem <span class="keyword">with</span> ordered data mode. Opts: (<span class="keyword">null</span>)</div><div class="line">switch_root: can't execute '/sbin/init': No such file <span class="keyword">or</span> directory</div><div class="line">&lt;<span class="number">0</span>&gt;Kernel panic - not syncing: Attempted <span class="keyword">to</span> kill init! exitcode=<span class="number">0x00000100</span></div><div class="line">[ <span class="number">5.654144</span>] Kernel panic - not syncing: Attempted <span class="keyword">to</span> kill init! exitcode=<span class="number">0x00000100</span></div><div class="line">[ <span class="number">5.654154</span>]</div><div class="line">Backtrace: [ <span class="number">5.664252</span>] Backtrace:</div><div class="line"><span class="annotation">[&lt;c0012b5c&gt;]</span> (dump_backtrace+<span class="number">0x0</span>/<span class="number">0x10c</span>) from <span class="annotation">[&lt;c05efd48&gt;]</span> (dump_stack+<span class="number">0x18</span>/<span class="number">0x1c</span>)</div><div class="line">[ <span class="number">5.674029</span>] <span class="annotation">[&lt;c0012b5c&gt;]</span> (dump_backtrace+<span class="number">0x0</span>/<span class="number">0x10c</span>) from <span class="annotation">[&lt;c05efd48&gt;]</span> (dump_stack+<span class="number">0x18</span>/<span class="number">0x1c</span>)</div><div class="line">r6:c097175c[ <span class="number">5.683506</span>] r6:c097175c r5:c097175c r5:c097175c r4:c09f93c0 r4:c09f93c0 r3:<span class="number">00000001</span> r3:<span class="number">00000001</span></div><div class="line"><span class="annotation">[&lt;c05efd30&gt;]</span> (dump_stack+<span class="number">0x0</span>/<span class="number">0x1c</span>) from <span class="annotation">[&lt;c05f0124&gt;]</span> (panic+<span class="number">0x94</span>/<span class="number">0x1d4</span>)</div><div class="line">[ <span class="number">5.698880</span>] <span class="annotation">[&lt;c05efd30&gt;]</span> (dump_stack+<span class="number">0x0</span>/<span class="number">0x1c</span>) from <span class="annotation">[&lt;c05f0124&gt;]</span> (panic+<span class="number">0x94</span>/<span class="number">0x1d4</span>)</div><div class="line"><span class="annotation">[&lt;c05f0090&gt;]</span> (panic+<span class="number">0x0</span>/<span class="number">0x1d4</span>) from <span class="annotation">[&lt;c003b1e8&gt;]</span> (do_exit+<span class="number">0x6d4</span>/<span class="number">0x7c4</span>)</div><div class="line">[ <span class="number">5.712787</span>] <span class="annotation">[&lt;c05f0090&gt;]</span> (panic+<span class="number">0x0</span>/<span class="number">0x1d4</span>) from <span class="annotation">[&lt;c003b1e8&gt;]</span> (do_exit+<span class="number">0x6d4</span>/<span class="number">0x7c4</span>)</div><div class="line">r3:ef048000[ <span class="number">5.721396</span>] r3:ef048000 r2:<span class="number">00000000</span> r2:<span class="number">00000000</span> r1:<span class="number">00000100</span> r1:<span class="number">00000100</span> r0:c084c720 r0:c084c720</div><div class="line">r7:ef03c000[ <span class="number">5.731473</span>] r7:ef03c000</div><div class="line"><span class="annotation">[&lt;c003ab14&gt;]</span> (do_exit+<span class="number">0x0</span>/<span class="number">0x7c4</span>) from <span class="annotation">[&lt;c003b558&gt;]</span> (do_group_exit+<span class="number">0x50</span>/<span class="number">0xb8</span>)</div><div class="line">[ <span class="number">5.740973</span>] <span class="annotation">[&lt;c003ab14&gt;]</span> (do_exit+<span class="number">0x0</span>/<span class="number">0x7c4</span>) from <span class="annotation">[&lt;c003b558&gt;]</span> (do_group_exit+<span class="number">0x50</span>/<span class="number">0xb8</span>)</div><div class="line">r7:<span class="number">000000</span>f8[ <span class="number">5.750102</span>] r7:<span class="number">000000</span>f8</div><div class="line"><span class="annotation">[&lt;c003b508&gt;]</span> (do_group_exit+<span class="number">0x0</span>/<span class="number">0xb8</span>) from <span class="annotation">[&lt;c003b5d8&gt;]</span> (__wake_up_parent+<span class="number">0x0</span>/<span class="number">0x28</span>)</div><div class="line">[ <span class="number">5.760208</span>] <span class="annotation">[&lt;c003b508&gt;]</span> (do_group_exit+<span class="number">0x0</span>/<span class="number">0xb8</span>) from <span class="annotation">[&lt;c003b5d8&gt;]</span> (__wake_up_parent+<span class="number">0x0</span>/<span class="number">0x28</span>)</div><div class="line">r7:<span class="number">000000</span>f8[ <span class="number">5.769944</span>] r7:<span class="number">000000</span>f8 r6:b6f3b774 r6:b6f3b774 r5:b6f3b774 r5:b6f3b774 r4:<span class="number">000708</span>ee r4:<span class="number">000708</span>ee</div><div class="line"><span class="annotation">[&lt;c003b5c0&gt;]</span> (sys_exit_group+<span class="number">0x0</span>/<span class="number">0x18</span>) from <span class="annotation">[&lt;c000edc0&gt;]</span> (ret_fast_syscall+<span class="number">0x0</span>/<span class="number">0x30</span>)</div><div class="line">[ <span class="number">5.786445</span>] <span class="annotation">[&lt;c003b5c0&gt;]</span> (sys_exit_group+<span class="number">0x0</span>/<span class="number">0x18</span>) from <span class="annotation">[&lt;c000edc0&gt;]</span> (ret_fast_syscall+<span class="number">0x0</span>/<span class="number">0x30</span>)</div><div class="line">&lt;<span class="number">2</span>&gt;CPU1: stopping</div><div class="line">[ <span class="number">5.796885</span>] CPU1: stopping</div><div class="line">Backtrace: [ <span class="number">5.800553</span>] Backtrace:</div><div class="line"><span class="annotation">[&lt;c0012b5c&gt;]</span> (dump_backtrace+<span class="number">0x0</span>/<span class="number">0x10c</span>) from <span class="annotation">[&lt;c05efd48&gt;]</span> (dump_stack+<span class="number">0x18</span>/<span class="number">0x1c</span>)</div><div class="line">[ <span class="number">5.810317</span>] <span class="annotation">[&lt;c0012b5c&gt;]</span> (dump_backtrace+<span class="number">0x0</span>/<span class="number">0x10c</span>) from <span class="annotation">[&lt;c05efd48&gt;]</span> (dump_stack+<span class="number">0x18</span>/<span class="number">0x1c</span>)</div><div class="line">r6:c0954170[ <span class="number">5.819794</span>] r6:c0954170 r5:ef064000 r5:ef064000 r4:c09685f0 r4:c09685f0 r3:c0970194 r3:c0970194</div><div class="line"><span class="annotation">[&lt;c05efd30&gt;]</span> (dump_stack+<span class="number">0x0</span>/<span class="number">0x1c</span>) from <span class="annotation">[&lt;c0014268&gt;]</span> (handle_IPI+<span class="number">0x194</span>/<span class="number">0x1c8</span>)</div><div class="line">[ <span class="number">5.835688</span>] <span class="annotation">[&lt;c05efd30&gt;]</span> (dump_stack+<span class="number">0x0</span>/<span class="number">0x1c</span>) from <span class="annotation">[&lt;c0014268&gt;]</span> (handle_IPI+<span class="number">0x194</span>/<span class="number">0x1c8</span>)</div><div class="line"><span class="annotation">[&lt;c00140d4&gt;]</span> (handle_IPI+<span class="number">0x0</span>/<span class="number">0x1c8</span>) from <span class="annotation">[&lt;c000853c&gt;]</span> (gic_handle_irq+<span class="number">0x58</span>/<span class="number">0x60</span>)</div><div class="line">[ <span class="number">5.850978</span>] <span class="annotation">[&lt;c00140d4&gt;]</span> (handle_IPI+<span class="number">0x0</span>/<span class="number">0x1c8</span>) from <span class="annotation">[&lt;c000853c&gt;]</span> (gic_handle_irq+<span class="number">0x58</span>/<span class="number">0x60</span>)</div><div class="line"><span class="annotation">[&lt;c00084e4&gt;]</span> (gic_handle_irq+<span class="number">0x0</span>/<span class="number">0x60</span>) from <span class="annotation">[&lt;c000e980&gt;]</span> (__irq_svc+<span class="number">0x40</span>/<span class="number">0x70</span>)</div><div class="line">[ <span class="number">5.866354</span>] <span class="annotation">[&lt;c00084e4&gt;]</span> (gic_handle_irq+<span class="number">0x0</span>/<span class="number">0x60</span>) from <span class="annotation">[&lt;c000e980&gt;]</span> (__irq_svc+<span class="number">0x40</span>/<span class="number">0x70</span>)</div><div class="line">Exception stack(<span class="number">0xef065f58</span> <span class="keyword">to</span> <span class="number">0xef065fa0</span>)</div><div class="line">[ <span class="number">5.878346</span>] Exception stack(<span class="number">0xef065f58</span> <span class="keyword">to</span> <span class="number">0xef065fa0</span>)</div><div class="line"><span class="number">5</span>f40: ffffffed <span class="number">00000001</span></div><div class="line">[ <span class="number">5.890249</span>] <span class="number">5</span>f40: ffffffed <span class="number">00000001</span></div><div class="line"><span class="number">5</span>f60: <span class="number">0</span>febd000 <span class="number">00000000</span> ef064000 ef064000 c09eac88 c05fba14 c096cb10 <span class="number">410</span>fc074</div><div class="line">[ <span class="number">5.905278</span>] <span class="number">5</span>f60: <span class="number">0</span>febd000 <span class="number">00000000</span> ef064000 ef064000 c09eac88 c05fba14 c096cb10 <span class="number">410</span>fc074</div><div class="line"><span class="number">5</span>f80: ef064000 ef065fac ef065fb0 ef065fa0 c000f9c4 c000f9c8 <span class="number">60000013</span> ffffffff</div><div class="line">[ <span class="number">5.920307</span>] <span class="number">5</span>f80: ef064000 ef065fac ef065fb0 ef065fa0 c000f9c4 c000f9c8 <span class="number">60000013</span> ffffffff</div><div class="line">r6:ffffffff[ <span class="number">5.929523</span>] r6:ffffffff r5:<span class="number">60000013</span> r5:<span class="number">60000013</span> r4:c000f9c8 r4:c000f9c8 r3:c000f9c4 r3:c000f9c4</div><div class="line"><span class="annotation">[&lt;c000f998&gt;]</span> (default_idle+<span class="number">0x0</span>/<span class="number">0x38</span>) from <span class="annotation">[&lt;c000fd64&gt;]</span> (cpu_idle+<span class="number">0xd8</span>/<span class="number">0x11c</span>)</div><div class="line">[ <span class="number">5.945330</span>] <span class="annotation">[&lt;c000f998&gt;]</span> (default_idle+<span class="number">0x0</span>/<span class="number">0x38</span>) from <span class="annotation">[&lt;c000fd64&gt;]</span> (cpu_idle+<span class="number">0xd8</span>/<span class="number">0x11c</span>)</div><div class="line"><span class="annotation">[&lt;c000fc8c&gt;]</span> (cpu_idle+<span class="number">0x0</span>/<span class="number">0x11c</span>) from <span class="annotation">[&lt;c05ece78&gt;]</span> (secondary_start_kernel+<span class="number">0xfc</span>/<span class="number">0x11c</span>)</div><div class="line">[ <span class="number">5.961143</span>] <span class="annotation">[&lt;c000fc8c&gt;]</span> (cpu_idle+<span class="number">0x0</span>/<span class="number">0x11c</span>) from <span class="annotation">[&lt;c05ece78&gt;]</span> (secondary_start_kernel+<span class="number">0xfc</span>/<span class="number">0x11c</span>)</div><div class="line"><span class="annotation">[&lt;c05ecd7c&gt;]</span> (secondary_start_kernel+<span class="number">0x0</span>/<span class="number">0x11c</span>) from <span class="annotation">[&lt;405ec814&gt;]</span> (<span class="number">0x405ec814</span>)</div><div class="line">[ <span class="number">5.977126</span>] <span class="annotation">[&lt;c05ecd7c&gt;]</span> (secondary_start_kernel+<span class="number">0x0</span>/<span class="number">0x11c</span>) from <span class="annotation">[&lt;405ec814&gt;]</span> (<span class="number">0x405ec814</span>)</div><div class="line">r6:<span class="number">10</span>c0387d[ <span class="number">5.986430</span>] r6:<span class="number">10</span>c0387d r5:<span class="number">00000015</span> r5:<span class="number">00000015</span> r4:<span class="number">6</span>f05406a r4:<span class="number">6</span>f05406a r3:c05ec7fc r3:c05ec7fc</div><div class="line">&lt;<span class="number">6</span>&gt;[hotplug]: cpu(<span class="number">0</span>) <span class="keyword">try</span> <span class="keyword">to</span> kill cpu(<span class="number">1</span>)</div><div class="line">[ <span class="number">5.999023</span>] [hotplug]: cpu(<span class="number">0</span>) <span class="keyword">try</span> <span class="keyword">to</span> kill cpu(<span class="number">1</span>)</div><div class="line">&lt;<span class="number">3</span>&gt;[hotplug]: <span class="keyword">try</span> <span class="keyword">to</span> kill cpu:<span class="number">1</span> failed!</div><div class="line">[ <span class="number">7.007059</span>] [hotplug]: <span class="keyword">try</span> <span class="keyword">to</span> kill cpu:<span class="number">1</span> failed!</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>遇到的问题：</strong><br>如果将dev/nande格式化为EXT4分区，开机就会出现hotplug问题，估计是cubieboard上的分区是采用sanxi-tools的nand-pard来分的，估计它的MBR（硬盘分区表）是比较特殊的，所以如果采]]>
+    </summary>
+    
+      <category term="cubieboard" scheme="http://blog.lifejs.com/tags/cubieboard/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CubieBoard-自动挂载TF卡和移动硬盘]]></title>
+    <link href="http://blog.lifejs.com/2013/08/26/cubieboard-automount-tf-and-disk/"/>
+    <id>http://blog.lifejs.com/2013/08/26/cubieboard-automount-tf-and-disk/</id>
+    <published>2013-08-25T16:34:00.000Z</published>
+    <updated>2014-12-07T14:45:47.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="fstab法：">fstab法：</h3>
+<p>先查看分区，确认TF卡和移动硬盘<br>cat /proc/partitions</p>
+<p>然后编辑/etc/fstab<br>nano /etc/fstab</p>
+<p>加入如下内容，其中/dev/mmcblk0p1为TF卡，/dev/sda1为移动硬盘的第一个分区，挂载到/media/TF和/media/DATA_PORT下，不需要先行建立/media/TF和/media/DATA_PORT文件夹，msdos适用于FAT系统，ntfs适用于NTFS系统，注意：这种系统要先安装ntfs-3g才行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/mmcblk0p1     /media/TF            msdos    defaults   <span class="number">1</span>    <span class="number">2</span></div><div class="line">/dev/sda1          /media/DATA_PORT     ntfs     defaults   <span class="number">0</span>    <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>然后重启即可<br>reboot</p>
+<p>下面得找个壳子了，用手摸板子出过两次事。当时也是自己好奇，摸摸芯片，看看温度如何。结果两次摸上去，mount的硬盘立即就没有了，不知道是不是手上有静电的原因。但立即又有了，但设备号已经从sda变成sdb。还好我在/etc/fstab中写的不是设备名，而是UUID值，这样mount -a就又全部找回来，直接mount上了，建议大家都使用UUID。侧面也说明这个板子设计还是不错的，没有死机，应该还是很稳定的。</p>
+<p>如果出现装完NTFS-3G后硬盘无法挂载，总是报错：<br>FATAL:Module fuse not found.<br>fuse:devise not found,try ‘modprobe fuse’ first.</p>
+<p>解决方法是先卸载掉FUSE,然后再重新装遍fuse和ntfs-3g</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get remove fuse</div><div class="line"><span class="built_in">sudo</span> apt-get install fuse</div><div class="line"><span class="built_in">sudo</span> apt-get install ntfs-<span class="number">3</span>g</div></pre></td></tr></table></figure>
+
+<h3 id="自动挂载脚本法：">自动挂载脚本法：</h3>
+<p><strong>第一种是开机启动脚本：</strong></p>
+<p>创建shell脚本<br>#vi mount_tf.sh，内容如下(不包括引号)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">mount -t msdos /dev/mmcblk0p1 /mnt/usb/</div></pre></td></tr></table></figure>
+
+<p>保存后，添加执行权限，如下：<br>#chmod +x mount_tf.sh</p>
+<p>随系统启动执行脚本<br>#vi /etc/rc.local<br>在近行尾的”exit 0”的上一行加入 mount_tf.sh文件所在的绝对路径即可。</p>
+<p>重启系统后，用“df -h”查看是否自动挂载成功。</p>
+<p><strong>第二种是插上设备后自动挂载脚本：</strong></p>
+<p>#sudo nano /etc/udev/rules.d/10-usbstorage.rules<br>然后将以下脚本文件粘帖，保存退出无须重启系统即可实现。<br>Usb及Sata存储设备会自动挂载到/media目录下面，并且支持utf8格式文件名。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="constant">KERNEL!</span>=<span class="string">"sd*"</span>, GOTO=<span class="string">"media_by_label_auto_mount_end"</span></div><div class="line"><span class="constant">SUBSYSTEM!</span>=<span class="string">"block"</span>,GOTO=<span class="string">"media_by_label_auto_mount_end"</span></div><div class="line"><span class="constant">IMPORT{program}</span>=<span class="string">"/sbin/blkid -o udev -p %N"</span></div><div class="line"><span class="constant">ENV{ID_FS_TYPE}</span>==<span class="string">""</span>, GOTO=<span class="string">"media_by_label_auto_mount_end"</span></div><div class="line"><span class="constant">ENV{ID_FS_LABEL}!</span>=<span class="string">""</span>, ENV{dir_name}=<span class="string">"%E{ID_FS_LABEL}"</span></div><div class="line"><span class="constant">ENV{ID_FS_LABEL}</span>==<span class="string">""</span>, ENV{dir_name}=<span class="string">"Untitled-%k"</span></div><div class="line"><span class="constant">ACTION</span>==<span class="string">"add"</span>, ENV{mount_options}=<span class="string">"relatime,sync"</span></div><div class="line"><span class="constant">ACTION</span>==<span class="string">"add"</span>, ENV{ID_FS_TYPE}==<span class="string">"vfat"</span>, ENV{mount_options}=<span class="string">"iocharset=utf8,umask=000"</span></div><div class="line"><span class="constant">ACTION</span>==<span class="string">"add"</span>, ENV{ID_FS_TYPE}==<span class="string">"ntfs"</span>, ENV{mount_options}=<span class="string">"iocharset=utf8,umask=000"</span></div><div class="line"><span class="constant">ACTION</span>==<span class="string">"add"</span>, RUN+=<span class="string">"/bin/mkdir -p /media/%E{dir_name}"</span>, RUN+=<span class="string">"/bin/mount -o $env{mount_options} /dev/%k /media/%E{dir_name}"</span></div><div class="line"><span class="constant"></span></div><div class="line">ACTION==<span class="string">"remove"</span>, ENV{dir_name}!=<span class="string">""</span>, RUN+=<span class="string">"/bin/umount -l /media/%E{dir_name}"</span>, RUN+=<span class="string">"/bin/rmdir /media/%E{dir_name}"</span></div><div class="line"><span class="constant">LABEL</span>=<span class="string">"media_by_label_auto_mount_end"</span></div></pre></td></tr></table></figure>
+
+<p>最好的做法：<br>/etc/fstab下加入TF卡的自动挂载<br>然后用第三种方法自动挂载移动硬盘</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="fstab法：">fstab法：</h3>
+<p>先查看分区，确认TF卡和移动硬盘<br>cat /proc/partitions</p>
+<p>然后编辑/etc/fstab<br>nano /etc/fstab</p>
+<p>加入如下内容，其中/dev/mmcb]]>
+    </summary>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CubieBoard-固件烧写]]></title>
+    <link href="http://blog.lifejs.com/2013/08/18/cubieboard-firmware-programming/"/>
+    <id>http://blog.lifejs.com/2013/08/18/cubieboard-firmware-programming/</id>
+    <published>2013-08-18T15:06:00.000Z</published>
+    <updated>2014-12-07T14:48:41.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>固件烧写：</strong>先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持FEL键不松手，等PhoenixSuit上显示烧写固件对话框问你是否要格式化时，点击“是”，然后继续保持FEL键不松手，看串口的输出情况，如下，直到看得到一定数目的调试信息时松开按住FEL键的手，固件就开始刷了。（之前试了多次都刷不成功，后来把所有的USB外设全拔掉，偶然用小Y右方的USB线来烧写，原来接的是USB HUB，终于成功了，估计是USB外设太多的原因，因为后来用左方的USB口也成功了）。     </p>
+<blockquote>
+<p>要注意的一点是：关于PhoenixSuit的安装，有一个google的驱动在win8 x64上安装不了。要关掉win8的驱动签名才行，具体参考：<a href="http://bbs.teclast.com/forum.php?mod=viewthread&amp;tid=231817" target="_blank" rel="external">【分享】PhoenixSuit VPhoenixSuit V1.0.6 一键刷机工具 - 【台电平板电脑讨论区】 台电科技欢迎您！</a></p>
+<p>注意：在 Windows 8 64Bit 操作系统，adb 驱动来自于 Google ，取消强制数字签名认证才能安装。操作步骤如下：win+I，选择最下方的更改电脑设置，常规——高级启动下的立即重启——疑难解答——高级选项——windows 启动设置——重启。重启的时候跳出选择界面，如果没有选择界面，请在重启时按 F8 进入选择界面。按数字“7”选择强制禁用驱动签名，然后正常安装驱动就行了。</p>
+</blockquote>
+<p>烧写过程的串口信息：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"> <span class="constant">FES</span><span class="symbol">:</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:Fes</span> <span class="constant">Ver</span><span class="symbol">:</span> 098</div><div class="line"> <span class="constant">FES</span><span class="symbol">:================================================================================================</span>=</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                                                                               =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                         <span class="constant">EEMMMMMMLL</span>                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                     <span class="constant">::MMMHOLIGANEE</span>                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                   <span class="constant">::MM</span>.                                                       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                   <span class="constant">MMFF</span>                                                        =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                 <span class="constant">FFMM</span>                                                          =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                <span class="constant">MMMM</span>                                                           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                              ..<span class="constant">MMFF</span>                                                           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                              <span class="constant">EEMM</span>.                                           <span class="constant">FFMMMM</span>           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          . <span class="constant">MMMMMMMM</span>    <span class="constant">MMMMMMMMMMMMMMMMMM</span>      <span class="constant">FFMMMMMM::</span>      <span class="constant">::MMMM</span>      <span class="constant">BBMMMMFF</span>           =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=        <span class="constant">::MM</span>  . <span class="constant">MMMM</span>          <span class="constant">MMMM</span>            <span class="constant">MM</span>.   <span class="constant">MMMMMM</span>    <span class="constant">EE</span>..<span class="constant">EEMM::</span>  <span class="constant">EE::</span>                 =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=        <span class="constant">MM</span>      <span class="constant">MMMM</span>        <span class="constant">::MMLL</span>          <span class="constant">EEMM</span>    <span class="constant">MMMMFF</span>  .       <span class="constant">MMMM::</span><span class="symbol">:</span><span class="symbol">:</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMM</span>    <span class="constant">FFMMI</span>         <span class="constant">BBMM</span>            <span class="constant">MMI</span>     <span class="constant">MMMM</span>            <span class="constant">MMMMEE</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMM</span>  . <span class="constant">MM::</span>          <span class="constant">MMMM</span>          <span class="constant">MMMM</span>    <span class="constant">BBMM</span>              <span class="constant">MMMM</span>                       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">BBMMFF::EE</span>              <span class="constant">MMMM</span>          <span class="constant">MMMM</span>  <span class="constant">MM::</span>                <span class="constant">BBMM</span>..                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMMEE</span>                <span class="constant">I</span> <span class="constant">MMI</span>         <span class="constant">I</span> <span class="constant">MMMM::</span>                  <span class="constant">::FFMMFF</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMM</span>          <span class="constant">LL</span>      <span class="constant">MMMM</span>          <span class="constant">EEMMMM</span>        <span class="constant">LL</span>          <span class="constant">BB</span>  <span class="constant">MMMM</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMM</span>      <span class="constant">I</span> <span class="constant">MM</span>        <span class="constant">MMMM</span>          <span class="constant">MMMMMM</span>      <span class="constant">MM::</span>        <span class="constant">MM</span>    <span class="constant">MMMM</span>                     =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=    <span class="constant">MMMMMMMMMMEE</span>          <span class="constant">MMMM</span>          .<span class="constant">GUANLI</span><span class="variable">@HUANG</span>.   <span class="constant">BB</span>    <span class="constant">BB</span>      <span class="constant">FFMM</span>.                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=      <span class="constant">MMMMMM</span>..          <span class="constant">I</span> <span class="constant">MMI</span>             <span class="constant">MMMMMMEE</span>      <span class="constant">MMMMMM</span>          <span class="constant">MMEE</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MMMM</span>                                            <span class="constant">MMMM</span>                   =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MMMM</span>                                            <span class="constant">::MM::</span>                 =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                        <span class="constant">MM</span>                                                <span class="constant">BBMM</span>        <span class="constant">MM</span>       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                      <span class="constant">EEBB</span>                                                  <span class="constant">BBMM</span>..  <span class="constant">MMMM</span>       =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                      <span class="constant">MM</span>                                                      ..<span class="constant">EEMMFF</span>         =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          <span class="constant">MMMMMMMMMMMM</span>                                                                         =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=          <span class="constant">MMMMMMMMI</span>                                                                            =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>=                                                                                               =</div><div class="line"> <span class="constant">FES</span><span class="symbol">:================================================================================================</span>=</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">1</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">2</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">3</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">5</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">6</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">7</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">8</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">9</span>........</div><div class="line"> <span class="constant">FES</span><span class="symbol">:CONFIG_USB_GADGET_DUALSPEED</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes</span> connect to host</div><div class="line"> <span class="constant">FES</span><span class="symbol">:USB_MOV_DATA_BY_DMA!</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> ......<span class="number">10</span>.......</div><div class="line"> <span class="constant">FES</span><span class="symbol">:jump</span> to fes_main</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span><span class="symbol">:</span> fes_protocol_process start</div><div class="line"> <span class="constant">FES</span><span class="symbol">:</span>[info]<span class="symbol">:</span> set address <span class="number">5</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:write</span> special pipe</div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span><span class="symbol">:</span> fed reg_addr = <span class="number">0x4011f714</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">0</span>] = <span class="number">0x40a00000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">1</span>] = <span class="number">0x40a01000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">2</span>] = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fed</span> para[<span class="number">3</span>] = <span class="number">0x00000000</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:</span>                <span class="constant">Hello</span>, <span class="constant">Nand</span> <span class="constant">Register</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:<span class="string">"private"</span></span> part <span class="constant">NOT</span> configured.</div><div class="line"> <span class="constant">NHW</span> <span class="symbol">:</span> start nand scan</div><div class="line"> [<span class="constant">NAND</span>] nand driver(b) <span class="symbol">version:</span> <span class="number">0x2</span>, <span class="number">0x12</span>, <span class="symbol">data:</span> <span class="number">20130325</span></div><div class="line"> <span class="constant">NFC</span> <span class="constant">Randomizer</span> start.</div><div class="line"> [<span class="constant">SCAN_DBG</span>] <span class="constant">Nand</span> flash chip id <span class="symbol">is:</span><span class="number">0xec</span> <span class="number">0xd7</span> <span class="number">0x94</span> <span class="number">0x7a</span> <span class="number">0x54</span> <span class="number">0x43</span></div><div class="line"></div><div class="line">[<span class="constant">SCAN_DBG</span>] ==============<span class="constant">Nand</span> <span class="constant">Architecture</span> <span class="constant">Parameter</span>==============</div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">ID</span><span class="symbol">:</span>         <span class="number">0x7a94d7ec</span> <span class="number">0xffffffff</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">Count</span><span class="symbol">:</span>      <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Chip</span> <span class="constant">Connect</span><span class="symbol">:</span>    <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Nand</span> <span class="constant">Rb</span> <span class="constant">Connect</span> <span class="constant">Mode</span><span class="symbol">:</span>      <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Sector</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Page</span><span class="symbol">:</span> <span class="number">0x10</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Page</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Block</span><span class="symbol">:</span>  <span class="number">0x80</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Block</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Die</span><span class="symbol">:</span>   <span class="number">0x1000</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Plane</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Die</span><span class="symbol">:</span>   <span class="number">0x2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Die</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Chip</span><span class="symbol">:</span>    <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Bank</span> <span class="constant">Count</span> <span class="constant">Of</span> <span class="constant">Chip</span><span class="symbol">:</span>   <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Optional</span> <span class="constant">Operation</span><span class="symbol">:</span>   <span class="number">0x11088</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Access</span> <span class="constant">Frequence</span><span class="symbol">:</span>     <span class="number">0x1e</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">ECC</span> <span class="constant">Mode</span><span class="symbol">:</span>             <span class="number">0x3</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">Read</span> <span class="constant">Retry</span> <span class="constant">Type</span><span class="symbol">:</span>      <span class="number">0x0</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">DDR</span> <span class="constant">Type</span><span class="symbol">:</span>             <span class="number">0x0</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>] =======================================================</div><div class="line"></div><div class="line">[<span class="constant">SCAN_DBG</span>] ==============<span class="constant">Optional</span> <span class="constant">Operaion</span> <span class="constant">Parameter</span>==============</div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneReadCmd</span><span class="symbol">:</span>      <span class="number">0x60</span>, <span class="number">0x60</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneWriteCmd</span><span class="symbol">:</span>     <span class="number">0x11</span>, <span class="number">0x81</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneCopyReadCmd</span><span class="symbol">:</span>  <span class="number">0x60</span>, <span class="number">0x60</span>, <span class="number">0x35</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneCopyWriteCmd</span><span class="symbol">:</span> <span class="number">0x85</span>, <span class="number">0x11</span>, <span class="number">0x81</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneStatusCmd</span><span class="symbol">:</span>    <span class="number">0x70</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">InterBnk0StatusCmd</span><span class="symbol">:</span>     <span class="number">0xf1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">InterBnk1StatusCmd</span><span class="symbol">:</span>     <span class="number">0xf2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">BadBlockFlagPosition</span><span class="symbol">:</span>   <span class="number">0x2</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>]    <span class="constant">MultiPlaneBlockOffset</span><span class="symbol">:</span>  <span class="number">0x1</span></div><div class="line"> [<span class="constant">SCAN_DBG</span>] =======================================================</div><div class="line"> <span class="constant">NHW</span> <span class="symbol">:</span> nand hw scan ok</div><div class="line"> check nand version start.</div><div class="line"> <span class="constant">Current</span> nand driver version is <span class="number">0x000000ff</span> <span class="number">0x00000000</span> <span class="number">0x00000002</span> <span class="number">0x00000012</span></div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> <span class="constant">Media</span> version is valid <span class="keyword">in</span> block <span class="number">0</span>, version info is <span class="number">0x000000ff</span> <span class="number">0x00000000</span> <span class="number">0x00000002</span> <span class="number">0x00000012</span></div><div class="line"> nand driver version match ok <span class="keyword">in</span> block <span class="number">0</span>.</div><div class="line"> <span class="constant">VersionCheck</span> <span class="keyword">end</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:To</span> erase boot<span class="number">0</span> blocks.</div><div class="line"> <span class="constant">Ready</span> to erase boot blocks.</div><div class="line"> has cleared the boot blocks.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:L322</span>,<span class="constant">To</span> erase nand.</div><div class="line"> <span class="constant">Ready</span> to erase chip.</div><div class="line"> nfb phy init ok.</div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> page <span class="symbol">size:</span><span class="number">0x00002000</span>, <span class="symbol">oob_size:</span> <span class="number">0x00000020</span>, block <span class="symbol">size:</span> <span class="number">0x00000080</span>, bad block <span class="symbol">position:</span> <span class="number">0x00000002</span>.</div><div class="line"> chip_cnt = <span class="number">0x00000001</span>, chip_connect = <span class="number">0x00000001</span>, rb_cnt = <span class="number">0x00000001</span>,  rb_connect = <span class="number">0x00000001</span>,  good_block_ratio =<span class="number">0x000003b0</span></div><div class="line"> erase chip <span class="number">0</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">16</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">17</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">4094</span></div><div class="line"> [<span class="constant">Fet</span>]<span class="symbol">:find</span> a bad block <span class="number">4095</span></div><div class="line"> has cleared the chip.</div><div class="line"> the nand is <span class="constant">OK</span>.</div><div class="line"> <span class="constant">Ready</span> to scan bad blocks.</div><div class="line"> nfb phy init ok.</div><div class="line"> <span class="constant">Succeed</span> <span class="keyword">in</span> getting flash info.</div><div class="line"> scan <span class="constant">CE</span> <span class="number">0</span></div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">5</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">16</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">17</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4094</span>.</div><div class="line"> find <span class="keyword">defined</span> bad block <span class="keyword">in</span> chip <span class="number">0</span>, block <span class="number">4095</span>.</div><div class="line"> <span class="number">6</span> bad blocks <span class="keyword">in</span> <span class="constant">CE</span> <span class="number">0</span></div><div class="line"> cal bad block num is <span class="number">12</span></div><div class="line"> cal good block num is <span class="number">971</span></div><div class="line"> good block ratio is <span class="number">944</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:get</span> the good blk ratio after hwscan <span class="symbol">:</span> <span class="number">944</span></div><div class="line"> _RepairLogBlkTbl start</div><div class="line"> _RepairLogBlkTbl <span class="keyword">end</span></div><div class="line"> get mbr error</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:erase=</span><span class="number">1</span>, hasPrivatePart=<span class="number">0</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:nand</span> logic size [<span class="number">0x00000000</span>, <span class="number">0x00760000</span>]<span class="constant">Sec</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:</span>               <span class="constant">Byebye</span>, <span class="constant">Nand</span> <span class="constant">Register</span>.</div><div class="line"> [<span class="constant">Fed</span>]<span class="symbol">:-------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:INFO</span> <span class="symbol">:</span> run addr = <span class="number">0x00000000</span> , type = <span class="number">1437204482</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0x50753e48</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0xc51b63f7</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:fes_crc</span>   = <span class="number">0x00000000</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:media_crc</span> = <span class="number">0xdab00f3b</span></div><div class="line"> <span class="constant">FES</span><span class="symbol">:---------------------------------------------------</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>固件烧写：</strong>先把串口线接上以显示调试信息，用putty接上板子串口，然后接上OTG转USB线的OTG接口那端，然后打开PhoenixSuit,选择固件镜像，然后按住OTG接口下的FEL按键不放，将OTG线的USB接口那端插入USB接口，保持F]]>
+    </summary>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[软件设计的一些感想]]></title>
+    <link href="http://blog.lifejs.com/2013/08/16/thinking-in-software-design/"/>
+    <id>http://blog.lifejs.com/2013/08/16/thinking-in-software-design/</id>
+    <published>2013-08-16T04:46:00.000Z</published>
+    <updated>2014-12-07T14:56:00.000Z</updated>
+    <content type="html"><![CDATA[<p>已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一些洞见。事后用的时候倒觉得理所当然了。其实这是要不得的，学习的过程我认为<strong>不应该是纯粹的吸收，而是要有选择的过滤，留其精华，去其糟粕</strong>，如果能加入自己的总结就更好了，只可惜我在很多时候忘记了这事儿，或者在很多时候没有空下来专门做一次如此认真的总结。但在技术的层面上，一般的说法是，任何一种技术都是基于某种设计思想，而至于用什么来具体实现并不是最重要的。其实思想和设计不能用简单的一对一和一对多关系来说明。经常会有人说一种思想可以衍生多种技术，其实他只说对了一半，因为一种技术并不只是一种思想的实现，而是多种思想的交融。</p>
+<p>拿软件设计来说，对于基于窗口的程序设计，我们有多种技术方案可以选择，在windows下有mfc，.net, wpf，在linux下有gtk, qt, wxWidgets，在mac下有cocoa, 但核心思想差不多，大多用到了mvc思想，但mvc思想本身也是一个组合思想，它组合了策略模式，观察者模式等。对于这样的一个设计思想来说，它其实是一个对设计的高度抽象。我甚至可以做这样一个奇怪的思考：如果将mvc模式套用到人身上，那么人所看到的就是view，人所想到的就是controller，人所使用的便是model了，那么针对一个人来说，他的基本动作可能如下：看到东西-&gt;产生需求-&gt;寻找工具来实现自己的需求。所以我感觉，软件设计有时更像对人的行为模拟，软件系统更像是一个虚拟的人（这个人的智商要看你给他多少知识和能力），或者说，软件设计归根到底是以人的认知来实现的，所以我们要划分模块，要理清各个模块之间的关系，要考虑它们之间的相互影响，还要考虑他们之间的交互。如果各个模块之间关系混乱不清，那么你将会的到一个很烂的系统，置于会出现什么结果，那就不得而知了。举个简单的例子：试想一下如果你吃饭咬到舌头了，却发现屁股痛，这是一件多么尴尬的事情。</p>
+<p>所以，软件的设计实际上是一个很复杂的事情，一个高超的软件更为复杂，因为你要考虑太多的情况，一个人是极其复杂的。但正如所有的物质都是由简单的原子组成的，所有的复杂性都能划分成最简单最基本的东西。就好比操作系统这样一个常人很难企及的东西，其实最底层也就六个操作，引用linux创始人linus的话来说就是：“你在UNIX上完成的大部分任务都是通过六个基本操作完成的，它们被称作”系统呼叫”（system call）。第一个基本操作是”创建子进程”（fork），一个程序把自身完全复制出来，这样你就有了两个相同的拷贝。第二个基本操作是复制出来的程序，再用一个新项目替换自己。其他四个基本系统呼叫—打开、关闭、读和写—都是为了访问文件的。这六个系统呼叫便组成了UNIX的简单操作。然后，你只需在程序之间创造出交流渠道（pipes），就能解决复杂的问题。”，那么归结到人身上，也就是那么几种：活动（身体活动和思维活动），新陈代谢，睡觉（纯属个人想法勿喷）。</p>
+<p>记得以前看bbc的纪录片《混沌理论》中讲到图灵的一段，图灵曾经提出一个伟大的构想：自然界由一个最简单的数学公式组成。这个理论促进了后来的“混沌理论”和“分形学”的研究和发展，包括著名的“蝴蝶效应”，也和“混沌理论”有关。我们都知道，图灵被称为“计算机之父”，而现代的软件设计方法和这种构想肯定存在千丝万缕的联系。所以，我认为，软件设计如果是一种把问题搞复杂的设计，那将是一个失败的设计。软件设计应该是将一个复杂的系统一步一步划分成“原子”的过程，而<strong>软件架构的目标应该是使每一个分块都容易理解而且容易改变</strong>（所谓的可维护性和可扩展性）。</p>
+<p>而对于人来说，人生活在一个“实体”的世界里，如果把人类的历史看作一天，那么人拥有真正的思想是在一分钟以前，所以上帝无法阻止人类用“面向对象”的方式来进行软件设计，也无法阻止程序员用mvc的思想来实现一个软件系统，因为这一切看起来理所当然。所以，无论你的技术多么高超，我都可以想象你在面对一堆复杂的算法和一堆鲜活的对象的时候的不同感受，因为我也可以感同身受:)。所有的人都喜欢用简单的方式解决问题（如果你不是，那你也许是公务员，:)），更喜欢用简单的方式解决复杂的问题，那样会有成就感，程序员是最佳案例。为什么说一个会偷懒的程序员是一个好的程序员？那是因为程序员的偷懒是对问题的抽象和扩展，对之前冗长而繁琐的解决问题的方式建立一个更为宽泛的适用模型，从而应对类似重复的问题。而所谓的抽象，便是思维的结晶。其实，抽象在各行各业都有应用，只不过在软件开发领域，这个词被提及的非常之广范非常之响亮，以至于成了某些编程语言的关键字。其实抽象是一个很宽泛的概念，<strong>它是一种对事物本质的提取过程</strong>（《数据结构》中有这样的定义），所以我觉得在软件设计中的抽象，可以运用到其他领域，在其他领域中的抽象，也能应用到软件设计中来。所以，没必要惊讶图灵是个数学家，或者唐纳德也是数学家…，因为从本质上来说，数学这门科学就是一种抽象科学，把自然界抽象成数学模型，而计算机就是对数学抽象模型的模拟器。</p>
+<p>胡说了一大堆，也不知从哪儿来的灵感，但作为一个软件工程师，我觉得这些东西是应该而且值得去思考的。上次看到一则博文讲到，这个世界由三种人推动：科学家，艺术家，工程师。也许这种说法并不一定正确，但至少说明了一个观点：工程师想要实现优秀的产品，必须懂得科学家和艺术家的抽象，因为那是他们的思维结晶。而<strong>一个好的工程师，从某种程度来说，也是一个科学家或者一个艺术家</strong>。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>已经好久没有写博客了，不是因为没有学东西，而是因为学的东西不够系统，不够具体，没有整理起来（外加人懒），所以不想浪费笔墨。所以一直潜水。。但总会有感想的，在学习的过程中，时常会遇到一些令人惊喜的东西，令人拍案叫绝的东西，但学会之后觉得简单或者不值一提，于是没有当机立断写出一]]>
+    </summary>
+    
+      <category term="软件设计" scheme="http://blog.lifejs.com/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="探索与发现" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%8F%91%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[多系统安装实录]]></title>
+    <link href="http://blog.lifejs.com/2013/07/29/multiple-os-installation/"/>
+    <id>http://blog.lifejs.com/2013/07/29/multiple-os-installation/</id>
+    <published>2013-07-29T09:19:00.000Z</published>
+    <updated>2014-12-07T14:57:27.000Z</updated>
+    <content type="html"><![CDATA[<p>对于win8，ubuntu13.04和osx10.8在小Y上的安装着实费了我好一顿功夫，最难装的当属osx了，为了它，害得我格掉两块硬盘，他喵的，还好好多重要资料存在移动硬盘上，否则真得恶心死。还是描述一下吧，做一个纪念，主要是一些遇到的问题：</p>
+<p>首先讲一下当时我格掉两块硬盘的终极无语的神操作吧。这当然是发生在装osx的时候啦。装osx的时候，打开磁盘实用工具进行抹盘操作时，发现点击想要抹去的盘的时候，提示无法识别，是否修复，结果一修复，真的一下就修复了两块硬盘，所有的分区全部丢失，每个硬盘被生生的变成3个分区。这个惨痛的教训切记不要再犯！真准备放弃osx的安装，不过后来探索了和再次尝试了一下，总算发现问题所在。原因是，用硬盘分区助手做的osx的安装盘引导分区和osx最终安装的分区必须在同一个硬盘上，否则就会出现这个情况，因为当时将osx的安装盘放在了移动硬盘的分区上，结果能识别移动硬盘的分区，就是识别不了其他硬盘的分区，你一点就会提示修复。所以，安装osx的时候必须在将要安装osx的分区的同一块硬盘的另一个分区上制作安装盘。</p>
+<p>再说一下osx的安装，参考了这两篇文章：<a href="http://bbs.pcbeta.com/viewthread-948500-1-1.html" target="_blank" rel="external">http://bbs.pcbeta.com/viewthread-948500-1-1.html</a>，<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1324568" target="_blank" rel="external">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1324568</a>，大致分为几个步骤：</p>
+<h2 id="1-_制作osx安装盘以及安装盘引导分区">1. 制作osx安装盘以及安装盘引导分区</h2>
+<p>使用原生osx安装盘做系统安装盘的话,需要替换内核和放入可引导驱动,另外,还要把某个符号链接替换成链接指向的文件夹。首先将元安装盘中的可引导的安装盘提取出来之后，用硬盘分区助手写入到一个硬盘分区中（切记，一定要和osx将要安装的分区处于同一硬盘上）,然后将硬盘扩容，将内核放到根目录下，将驱动放到Extra目录下以便变色龙加载从而引导osx，再替换一些文件即可。具体操作如下：</p>
+<h3 id="a)_分区。">a) 分区。</h3>
+<p>在同一块硬盘上分两个区，一个用来做osx安装引导分区，一个用来安装osx，关于硬盘扩容，必须使用Paragon PartitionManager 11以上版本,其他类似软件都TM是扯淡的，对hfs+分区不支持。但这货和win8又不兼容，草，所以最好在xp上进行。分区要注意的是，将用于osx安装的分区的前半部分先分个2G用于硬盘安装助手写入安装盘（2G以上都可以，因为2G就足够用了，我分了5G），剩余空间不分配，但要让它是未格式化的，否则会导致后面的扩容失败。至于osx将要安装的分区可以弄成未格式化的或者格式化为ntfs分区都可以。</p>
+<h3 id="b)osx安装盘制作。">b)osx安装盘制作。</h3>
+<p>要用到这三个玩意儿：</p>
+<ol>
+<li>HD_Install_Helper，硬盘安装助手，用来将镜像写到分区的东东</li>
+<li>HFSexplorer，用来打开osx安装光盘的dmg映像提取文件，以及生成可供硬盘安装助手写入分区的硬盘镜像文件</li>
+<li>MacDriver或Paragon_HFS__for_Windows，用以在windows下替换osx分区文件，主要是驱动。</li>
+</ol>
+<p>做法是：</p>
+<ol>
+<li>用7-Zip打开原版Lion 10.7.2 DMG文件（下载我提供的原版lion安装文件，文件名为Mac OS X Install DVD.dmg），进入\Mac OS X InstallDVD.dmg\InstallMacOSX.pkg\目录找到InstallESD.dmg点击“提取”，提取出来。得到我们要用的的第一个文件：InstallESD.dmg</li>
+<li>用hfsexplorer打开我们上一步得到的InstallESD.dmg，提取 mach_kernal 和BaseSystem.dmg 和Package文件夹。</li>
+<li>至此我们一共得到四个文件InstallESD.dmg 和mach_kernal 和BaseSystem.dmg 和Package文件夹。下面同样用hfsexplorer打开BaseSystem.dmg之后，点击Tools—creat disk image，以BaseSystem hfs.dmg名字保存。</li>
+<li>至此我们得到了我们所需的全部文件包括InstallESD.dmg 和mach_kernal 和BaseSystem.dmg 和Package文件夹和BaseSystem hfs.dmg<br>注意事项：ubuntu安装时选择自定义安装，然后在某个分区上安装，不要swap，但引导一定要选择到对应的那块分区上，千万别选整个硬盘，因为这将覆盖活动分区的引导，而且因为是grub，所以无法正常引导OSX。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>对于win8，ubuntu13.04和osx10.8在小Y上的安装着实费了我好一顿功夫，最难装的当属osx了，为了它，害得我格掉两块硬盘，他喵的，还好好多重要资料存在移动硬盘上，否则真得恶心死。还是描述一下吧，做一个纪念，主要是一些遇到的问题：</p>
+<p>首先讲一下当时]]>
+    </summary>
+    
+      <category term="多系统" scheme="http://blog.lifejs.com/tags/%E5%A4%9A%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="学习笔记" scheme="http://blog.lifejs.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+</feed>

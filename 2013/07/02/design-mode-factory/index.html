@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>设计模式学习之Factory Method模式和Abstract Factory模式 | 深海拾贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="终于到了工厂模式了，说起工厂模式，不得不把工厂方法模式和抽象工厂模式结合起来说，这两种模式都有工厂，乍听起来还真容易混淆，但它们却是不相同的两种模式，但又互相有联系。那么这两者之间各有什么用途，互相之间又有什么联系呢？一个一个来吧。
+既然说起了工厂模式，那么首先有一点是需要搞清的，那就是，所有的工厂模式都是为了将对象的创建过程封装起来，要么 将创建过程隔离出来 ，要么 将创建过程抽象成接口。
+那么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式学习之Factory Method模式和Abstract Factory模式">
+<meta property="og:url" content="http://blog.lifejs.com/2013/07/02/design-mode-factory/">
+<meta property="og:site_name" content="深海拾贝">
+<meta property="og:description" content="终于到了工厂模式了，说起工厂模式，不得不把工厂方法模式和抽象工厂模式结合起来说，这两种模式都有工厂，乍听起来还真容易混淆，但它们却是不相同的两种模式，但又互相有联系。那么这两者之间各有什么用途，互相之间又有什么联系呢？一个一个来吧。
+既然说起了工厂模式，那么首先有一点是需要搞清的，那就是，所有的工厂模式都是为了将对象的创建过程封装起来，要么 将创建过程隔离出来 ，要么 将创建过程抽象成接口。
+那么">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式学习之Factory Method模式和Abstract Factory模式">
+<meta name="twitter:description" content="终于到了工厂模式了，说起工厂模式，不得不把工厂方法模式和抽象工厂模式结合起来说，这两种模式都有工厂，乍听起来还真容易混淆，但它们却是不相同的两种模式，但又互相有联系。那么这两者之间各有什么用途，互相之间又有什么联系呢？一个一个来吧。
+既然说起了工厂模式，那么首先有一点是需要搞清的，那就是，所有的工厂模式都是为了将对象的创建过程封装起来，要么 将创建过程隔离出来 ，要么 将创建过程抽象成接口。
+那么">
+
+  
+    <link rel="alternative" href="/atom.xml" title="深海拾贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">everdom</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/DSP/" style="font-size: 10.00px;">DSP</a><a href="/tags/c-c/" style="font-size: 10.00px;">c/c++</a><a href="/tags/chrome/" style="font-size: 13.33px;">chrome</a><a href="/tags/cubieboard/" style="font-size: 16.67px;">cubieboard</a><a href="/tags/goagent/" style="font-size: 10.00px;">goagent</a><a href="/tags/gtk/" style="font-size: 13.33px;">gtk</a><a href="/tags/indicator/" style="font-size: 10.00px;">indicator</a><a href="/tags/linux/" style="font-size: 13.33px;">linux</a><a href="/tags/node/" style="font-size: 10.00px;">node</a><a href="/tags/putty/" style="font-size: 10.00px;">putty</a><a href="/tags/ruby/" style="font-size: 10.00px;">ruby</a><a href="/tags/webkit/" style="font-size: 10.00px;">webkit</a><a href="/tags/乱码/" style="font-size: 10.00px;">乱码</a><a href="/tags/多系统/" style="font-size: 10.00px;">多系统</a><a href="/tags/编码/" style="font-size: 10.00px;">编码</a><a href="/tags/设计模式/" style="font-size: 20.00px;">设计模式</a><a href="/tags/软件设计/" style="font-size: 10.00px;">软件设计</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					技术爱好者或是一个极客，致力于web开发，曾做过嵌入式开发，喜欢鼓捣移动开发和设计，崇尚简洁高效，完美主义。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">everdom</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">智慧与思想碰撞，科学与艺术汇合。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/everdom/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/everdom" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/u/0/102093507923007900383/posts/p/pub" title="google">google</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-design-mode-factory" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/07/02/design-mode-factory/" class="article-date">
+  	<time datetime="2013-07-02T04:31:00.000Z" itemprop="datePublished">Jul 2 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a><a class="article-category-link" href="/categories/学习笔记/探索与发现/">探索与发现</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式学习之Factory Method模式和Abstract Factory模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>终于到了工厂模式了，说起工厂模式，不得不把工厂方法模式和抽象工厂模式结合起来说，这两种模式都有工厂，乍听起来还真容易混淆，但它们却是不相同的两种模式，但又互相有联系。那么这两者之间各有什么用途，互相之间又有什么联系呢？一个一个来吧。</p>
+<p>既然说起了工厂模式，那么首先有一点是需要搞清的，那就是，所有的工厂模式都是为了将对象的创建过程封装起来，要么 <strong>将创建过程隔离出来</strong> ，要么 <strong>将创建过程抽象成接口</strong>。</p>
+<p>那么，在说这两种模式之前，先说一下简单工厂，所谓的简单工厂，其实就是一种最简单的将创建过程隔离的设计方法。我们通常在创建一个对象时，都会用到如下语句：<br>Object o=new Object();</p>
+<p>即new一个对象，但这种做法是最最基本最最原始的创建对象的方法，在面向对象的设计中，我们必须要遵循一个原则： <strong>要依赖抽象，不要依赖具体类</strong> 。所以，这种做法因为太过具体，所以我们得想办法把它抽象出来，怎么抽象呢，用简单工厂可以这样实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span></div><div class="line">  {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">do</span>()</div><div class="line">    {</div><div class="line">      Object o=SimpleFactory.createObject();</div><div class="line">    }</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span></span></div><div class="line">  {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">createObject</span>()</div><div class="line">    {</div><div class="line">       Object o=<span class="keyword">new</span> Object();</div><div class="line">       <span class="keyword">return</span> o;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+
+<p>咋看起来变化不大，不就是吧new Object改为一个类的静态方法了吗（其实也可以用非静态方法，不过需要先实例化对象），但这样做却可以适应需求的改变，比如说，我现在想要根据不同的类型创建不同的对象，如果直接用new方法，则会在do方法里面写上很多歌new Object()的语句，而且还有很多的判断，每当新增加一种类型，就得改动Client类代码。而如果将创建对象的过程用简单工厂封装起来，则只需要改动简单工厂里面的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//直接用new方法</span></div><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span></div><div class="line">  {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">do</span>(String type)</div><div class="line">    {</div><div class="line">       Object o;</div><div class="line">       <span class="keyword">switch</span>(type)</div><div class="line">       {</div><div class="line">         <span class="keyword">case</span> <span class="string">"type1"</span>:o=<span class="keyword">new</span> Object1();<span class="keyword">break</span>;<span class="comment">//Object1、Object2都是Object的子类</span></div><div class="line">         <span class="keyword">case</span> <span class="string">"type2"</span>:o=<span class="keyword">new</span> Object2();<span class="keyword">break</span>;</div><div class="line">         <span class="comment">//...</span></div><div class="line">       }</div><div class="line">    }</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="comment">//采用简单工厂封装创建过程</span></div><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span></div><div class="line">  {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">do</span>(String type)</div><div class="line">    {</div><div class="line">      Object o=SimpleFactory.createObject(type);</div><div class="line">    }</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span></span></div><div class="line">  {</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">createObject</span>(String type)</div><div class="line">    {</div><div class="line">       Object o;</div><div class="line">       <span class="keyword">switch</span>(type)</div><div class="line">       {</div><div class="line">         <span class="keyword">case</span> <span class="string">"type1"</span>:o=<span class="keyword">new</span> Object1();<span class="keyword">break</span>;<span class="comment">//Object1、Object2都是Object的子类</span></div><div class="line">         <span class="keyword">case</span> <span class="string">"type2"</span>:o=<span class="keyword">new</span> Object2();<span class="keyword">break</span>;</div><div class="line">         <span class="comment">//...</span></div><div class="line">       }</div><div class="line">       <span class="keyword">return</span> o;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+
+<p>但这样做还是会带来不便，因为还是要改动代码，增加新的判断分支，怎样才能更好的封装以增强可维护性和可扩展性呢，工厂方法模式和抽象工厂模式就可以大大增强简单工厂的作用。</p>
+<p>那么首先说说工厂方法模式，先说基本概念吧</p>
+<blockquote>
+<p><strong>工厂方法模式：</strong><br>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使一个类的实例化延迟到其子类。</p>
+<p><strong>适用性：</strong></p>
+<ol>
+<li>当一个类不知道它所必须创建的对象的类的时候。</li>
+<li>当一个类希望由它的子类来指定它所创建的对象的时候。</li>
+<li>当类将创建对象的职责委托给多个帮助子类中的某一个，并且你希望将哪一个帮助子类是代理者这一信息局部化的时候。</li>
+</ol>
+</blockquote>
+<p>工厂方法模式中，最重要的一点是“让子类决定实例化那一个类”，这一点怎么才能做到呢，而且这样做有什么好处呢？</p>
+<p>还是举例子最好了，对于工厂模式，能举的最好的例子当然是与生产产品有关的了，现在，我们假定生产一种手机，那么我们知道，每种手机都需要很多零部件，然后进行组装，打磨，包装等等，对于手机最主要的零件cpu来说，就有不同类型的cpu，比如高通，intel，苹果，德州仪器，或者mtk等等，那么我们在生产手机时，就需要使用某种芯片，就相当于创建这些对象。但不同手机可以使用不同的芯片，如果采用简单工厂来生产这些芯片，就像下面一样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">  Cpu cpu;</div><div class="line">  Memory memory;</div><div class="line">  Screen screen;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getCpu</span>();</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makePhone</span>(String phoneType)</div><div class="line">  {</div><div class="line">    <span class="keyword">switch</span>(phoneType)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"iphone4s"</span>:cpu=CpuFactory.createCpu(<span class="string">"apple A5"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"三星i9100"</span>:cpu=CpuFatory.createCpu(<span class="string">"高通"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"摩托罗拉me525"</span>:cpu=CpuFactory.createCpu(<span class="string">"高通"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"华为8500"</span>:cpu=CpuFactory.createCpu(<span class="string">"德州仪器"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"诺基亚"</span>:cpu=CpuFactory.createCpu(<span class="string">"intel"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">package</span>();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Cpu <span class="title">createCpu</span>(String cpuType)</div><div class="line">  {</div><div class="line">    Cpu cpu;</div><div class="line">    <span class="keyword">switch</span>(cpuType)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"apple A5"</span>:cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"apple A5X"</span>:cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5X"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"高通1代"</span>:cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"1"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"高通2代"</span>:cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"德州仪器"</span>:cpu=<span class="keyword">new</span> TiCpu();<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"intel"</span>:cpu=<span class="keyword">new</span> IntelCpu();<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>那么，如果增加新的cpu，就要在CpuFactory里面再增加新的判断分支。而如果使用工厂方法模式，就可以这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">protected</span> String type;</div><div class="line">  <span class="keyword">protected</span> Cpu cpu;</div><div class="line">  <span class="keyword">protected</span> Memory memory;</div><div class="line">  <span class="keyword">protected</span> Screen screen;</div><div class="line">  <span class="keyword">protected</span> <span class="keyword">abstract</span> Cpu <span class="title">getCpu</span>();</div><div class="line">  <span class="keyword">public</span> <span class="title">Cellphone</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.type=type;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makePhone</span>()</div><div class="line">  {</div><div class="line">    cpu=getCpu();</div><div class="line">    <span class="comment">//..</span></div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">package</span>();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Iphone</span> <span class="keyword">extends</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">   <span class="keyword">public</span> Cpu <span class="title">getCpu</span>()</div><div class="line">   {</div><div class="line">      <span class="keyword">switch</span>(type)</div><div class="line">      {</div><div class="line">        <span class="keyword">case</span> <span class="string">"3gs"</span>:cpu=CpuFactory.createCpu(<span class="string">"apple A3"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"4"</span>:cpu=CpuFactory.createCpu(<span class="string">"apple A5"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"4s"</span>:cpu=CpuFactory.createCpu(<span class="string">"apple A5X"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"5"</span>:cpu=CpuFactory.createCpu(<span class="string">"apple A6"</span>);</div><div class="line">        <span class="comment">//...</span></div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Motorola</span> <span class="keyword">extends</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> Cpu <span class="title">getCpu</span>()</div><div class="line">  {</div><div class="line">    <span class="keyword">switch</span>(type)</div><div class="line">      {</div><div class="line">        <span class="keyword">case</span> <span class="string">"millstone"</span>:cpu=CpuFactory.createCpu(<span class="string">"高通1代"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"me525"</span>:cpu=CpuFactory.createCpu(<span class="string">"高通2代"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"millstone2"</span>:cpu=CpuFactory.createCpu(<span class="string">"高通2代"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"xt860"</span>:cpu=CpuFactory.createCpu(<span class="string">"高通3代"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="comment">//...</span></div><div class="line">      }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//...</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Cpu <span class="title">createCpu</span>(String cpuType)</div><div class="line">  {</div><div class="line">    Cpu cpu;</div><div class="line">    <span class="keyword">switch</span>(cpuType)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"apple A5"</span>:cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"apple A5X"</span>:cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5X"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"高通1代"</span>:cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"1"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"高通2代"</span>:cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"德州仪器"</span>:cpu=<span class="keyword">new</span> TiCpu();<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"intel"</span>:cpu=<span class="keyword">new</span> IntelCpu();<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>对于上例来说，我们将不同类型的手机分离了出来，让它们共同继承Cellphone基类，显得结构清晰，便于扩展，比如现在如果有一款三星的手机，就只需要继承新建一个Samsung类然后继承Cellphone类，然后重写getCpu方法即可实现三星手机的cpu采购过程。也就是说，getCpu作为一个抽象的创建cpu的方法，让子类去具体实现。</p>
+<p>像这种结构，就体现了“具体的手机产品需要具体的cpu类型”的设计。也就是“定义一个用于创建对象的接口(getCpu)，让子类决定实例化哪一个类”，在Iphone类和Motorola类中分别实现了getCpu方法，使用简单工厂产生了各种的cpu。在这里，并不是采用工厂方法模式取代简单工厂，而是将简单工厂也应用到了工厂方法模式当中，因为这两者是不同的设计思想，也即 <strong>工厂方法模式是将创建过程抽象成接口</strong> ，而 <strong>简单工厂是将创建过程隔离出来</strong> 。而抽象工厂模式则是这两种思想的进一步结合和升华。</p>
+<blockquote>
+<p><strong>抽象工厂模式：</strong><br>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
+<p><strong>适用性：</strong></p>
+<ol>
+<li>一个系统要独立于它的产品的创建、组合和表示时。</li>
+<li>一个系统要由多个产品系列中的一个来配置时。</li>
+<li>当你要强调一系列相关的产品对象的设计以便进行联合使用时。</li>
+<li>当你提供一个产品类库，而只想显示它们的接口而不是实现时。</li>
+</ol>
+</blockquote>
+<p>前面的例子虽然将不同的手机种类从判断分支中解脱了出来，但对于cpu的制作仍然显得比较乱，也就是说CpuFactory承担了所有的cpu制作任务（搞垄断啊:&gt;），而cpu的型号五花八门，同一种型号的cpu也有很多的版本，如果放到一个工厂生产，实在不是一个聪明的做法，所以，我们自然考虑将不同的cpu从一个简单工厂解脱出来，分别由不同的工厂来生产（这样才有竞争嘛:&gt;），因此，我们将简单工厂改造成抽象工厂，怎么改造？看下面：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//抽象工厂类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  Cpu cpu;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">abstract</span> Cpu <span class="title">createCpu</span>(String type);</div><div class="line">}</div><div class="line"><span class="comment">//苹果cpu工厂类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppleCpuFactory</span> <span class="keyword">extends</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> Cpu <span class="title">createCpu</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">switch</span>(type)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"A3"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A3"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"A5"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"A5X"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A5X"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"A6"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> AppleCpu(<span class="string">"A6"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//高通cpu工厂类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QualcommCpuFactory</span> <span class="keyword">extends</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> Cpu <span class="title">createCpu</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">switch</span>(type)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"1代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"1"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"2代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"3代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> QualcommCpu(<span class="string">"3"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//德州仪器工厂类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TiCpuFactory</span> <span class="keyword">extends</span> <span class="title">CpuFactory</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> Cpu <span class="title">createCpu</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">switch</span>(type)</div><div class="line">    {</div><div class="line">      <span class="keyword">case</span> <span class="string">"1代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> TiCpu(<span class="string">"1"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"2代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> TiCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">"3代"</span>:<span class="keyword">this</span>.cpu=<span class="keyword">new</span> TiCpu(<span class="string">"3"</span>);<span class="keyword">break</span>;</div><div class="line">      <span class="comment">//...</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//cpu产品抽象类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cpu</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">protected</span> <span class="keyword">float</span> frequency;</div><div class="line">  <span class="keyword">protected</span> String type;</div><div class="line">  <span class="keyword">public</span> <span class="title">Cpu</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.type=type;</div><div class="line">  }</div><div class="line">}</div><div class="line"><span class="comment">//苹果cpu产品类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppleCpu</span> <span class="keyword">extends</span> <span class="title">Cpu</span></span></div><div class="line">{</div><div class="line">}</div><div class="line"><span class="comment">//高通cpu产品类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QualcommCpu</span> <span class="keyword">extends</span> <span class="title">Cpu</span></span></div><div class="line">{</div><div class="line">}</div><div class="line"><span class="comment">//德州仪器cpu产品类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TiCpu</span> <span class="keyword">extends</span> <span class="title">Cpu</span></span></div><div class="line">{</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>使用这种模式，就将各种具体的工厂分出了清晰的结构，也就是将工厂也抽象成接口了，这就是为什么叫“抽象工厂”的原因。<br>既然我们升级简单工厂为抽象工厂，那么创造产品自然就要用新的接口方法了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">protected</span> String type;</div><div class="line">  <span class="keyword">protected</span> Cpu cpu;</div><div class="line">  <span class="keyword">protected</span> Memory memory;</div><div class="line">  <span class="keyword">protected</span> Screen screen;</div><div class="line">  <span class="keyword">protected</span> CpuFactory cpuFactory;</div><div class="line">  <span class="keyword">protected</span> <span class="keyword">abstract</span> Cpu <span class="title">getCpu</span>();</div><div class="line">  <span class="keyword">public</span> <span class="title">Cellphone</span>(String type)</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.type=type;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makePhone</span>()</div><div class="line">  {</div><div class="line">    cpu=getCpu();</div><div class="line">    <span class="comment">//..</span></div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">package</span>(){};</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Iphone</span> <span class="keyword">extends</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">   <span class="keyword">public</span> Cpu <span class="title">getCpu</span>()</div><div class="line">   {</div><div class="line">      <span class="keyword">this</span>.cpuFactory=<span class="keyword">new</span> AppleCpuFactory();<span class="comment">//由于创建产品的方法不再是静态方法，所以需要创建实例</span></div><div class="line">      <span class="keyword">switch</span>(type)</div><div class="line">      {</div><div class="line">        <span class="keyword">case</span> <span class="string">"3gs"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"A3"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"4"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"A5"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"4s"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"A5X"</span>);</div><div class="line">        <span class="keyword">case</span> <span class="string">"5"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"A6"</span>);</div><div class="line">        <span class="comment">//...</span></div><div class="line">      }</div><div class="line">   }</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Motorola</span> <span class="keyword">extends</span> <span class="title">Cellphone</span></span></div><div class="line">{</div><div class="line">  <span class="keyword">public</span> Cpu <span class="title">getCpu</span>()</div><div class="line">  {</div><div class="line">    <span class="keyword">this</span>.cpuFactory=<span class="keyword">new</span> QualcommCpuFactory();</div><div class="line">    <span class="keyword">switch</span>(type)</div><div class="line">      {</div><div class="line">        <span class="keyword">case</span> <span class="string">"millstone"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"1"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"me525"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"millstone2"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"2"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"xt860"</span>:cpu=<span class="keyword">this</span>.cpuFactory.createCpu(<span class="string">"3"</span>);<span class="keyword">break</span>;</div><div class="line">        <span class="comment">//...</span></div><div class="line">      }</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>这样一来，整个结构就清晰多了，用一句话概括就是：由具体的手机使用具体的工厂生产具体的cpu，但手机、工厂和cpu都通过接口进行交互，较好的封装了各自的实现，从而达到了较好的可扩展性，大大降低了各自的耦合性。现在，如果要添加新的手机、新的cpu，就可以建立新类型的工厂来实现对新的cpu的创建过程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/07/10/design-mode-adapter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          设计模式学习之Adapter模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/06/24/design-mode-command/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之Command模式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="design-mode-factory" data-title="设计模式学习之Factory Method模式和Abstract Factory模式" data-url="http://blog.lifejs.com/2013/07/02/design-mode-factory/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 everdom
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
