@@ -4,7 +4,7 @@
   <subtitle><![CDATA[智慧与思想碰撞，科学与艺术汇合。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.lifejs.com/"/>
-  <updated>2014-12-21T07:44:12.681Z</updated>
+  <updated>2014-12-21T09:56:57.145Z</updated>
   <id>http://blog.lifejs.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://blog.lifejs.com/2014/10/22/publish-my-chrome-applications/"/>
     <id>http://blog.lifejs.com/2014/10/22/publish-my-chrome-applications/</id>
     <published>2014-10-21T16:15:59.000Z</published>
-    <updated>2014-12-07T15:58:09.000Z</updated>
+    <updated>2014-12-21T08:03:24.000Z</updated>
     <content type="html"><![CDATA[<p>这一段时间由于工作环境换成了linux，饱受了各种折腾的阵痛之后，哥决定下手实现一些急切的需求，最迫切的就属印象笔记和qq了，这两个常用的东西都没有linux版的客户端，不过两者都有网页版的，但网页版的终归纠结于要先打开浏览器，而且也不能做一些定制，于是乎，哥瞄准了chrome的packaged app这个狂野酷拽吊炸天的东西和chrome本身的跨平台特性，搞了两个chrome应用终于几本解决了燃眉之急～鼓掌～～撒花儿～～！</p>
 <p>首先是印象笔记啦，先放上安装地址：<br><a href="https://chrome.google.com/webstore/detail/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/lgeofkgcdepmadnmoendmocgolpbkfmp?utm_source=chrome-ntp-launcher" target="_blank" rel="external">https://chrome.google.com/webstore/detail/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/lgeofkgcdepmadnmoendmocgolpbkfmp?utm_source=chrome-ntp-launcher</a></p>
 <p>话说印象笔记后来升级了一下，界面更小清新了，好喜欢的赶脚哦～<br><a href="https://raw.github.com/everdom/ChromeEvernote/master/images/evernote preview3.png" target="_blank" rel="external"><img src="https://raw.github.com/everdom/ChromeEvernote/master/images/evernote preview3.png" alt="evernote preview3.png"></a></p>
